@@ -32,3 +32,6 @@ pipeline/.venv/
 pipeline/__pycache__/
 pipeline/**/__pycache__/
 pipeline/cache/
+
+.vercel
+.env*
