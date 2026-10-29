@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "./supabase/admin";
+import { db } from "./db";
 import { todayET, runNumber } from "./date";
 import { AnswerEntry, buildIndex, matchGuess, MatchIndex } from "./matching/match";
 import { PROMPTS_PER_DAY, Tier, TIERS, pointsToMeters } from "./scoring";
@@ -32,27 +32,44 @@ interface AnswerRow {
   quip: string | null;
 }
 
+export class NoDailySetError extends Error {
+  constructor(date: string) {
+    super(`No daily set configured for ${date}`);
+    this.name = "NoDailySetError";
+  }
+}
+
+export class RunStateError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "RunStateError";
+  }
+}
+
 export async function getTodayPrompts(date: string): Promise<TodayPrompt[]> {
-  const db = supabaseAdmin();
-  const { data, error } = await db
-    .from("daily_sets")
-    .select("position, prompt_id, prompts ( prompt_text, sport )")
-    .eq("date", date)
-    .order("position");
-  if (error) throw error;
-  return (data ?? []).map((row) => {
-    const prompt = Array.isArray(row.prompts) ? row.prompts[0] : row.prompts;
-    return {
-      position: row.position,
-      promptId: row.prompt_id,
-      text: (prompt as { prompt_text: string }).prompt_text,
-      sport: (prompt as { sport: string }).sport,
-    };
-  });
+  const sql = db();
+  const rows = (await sql`
+    select ds.position, ds.prompt_id, p.prompt_text, p.sport
+    from daily_sets ds
+    join prompts p on p.id = ds.prompt_id
+    where ds.date = ${date}
+    order by ds.position
+  `) as {
+    position: number;
+    prompt_id: string;
+    prompt_text: string;
+    sport: string;
+  }[];
+  return rows.map((r) => ({
+    position: r.position,
+    promptId: r.prompt_id,
+    text: r.prompt_text,
+    sport: r.sport,
+  }));
 }
 
 export async function getOrCreateRun(deviceId: string): Promise<RunStateDto> {
-  const db = supabaseAdmin();
+  const sql = db();
   const date = todayET();
 
   const prompts = await getTodayPrompts(date);
@@ -60,24 +77,26 @@ export async function getOrCreateRun(deviceId: string): Promise<RunStateDto> {
     throw new NoDailySetError(date);
   }
 
-  await db.from("players").upsert({ device_id: deviceId }).throwOnError();
+  await sql`
+    insert into players (device_id) values (${deviceId})
+    on conflict (device_id) do nothing
+  `;
 
-  let { data: run } = await db
-    .from("runs")
-    .select("*")
-    .eq("device_id", deviceId)
-    .eq("date", date)
-    .maybeSingle<RunRow>();
+  let runs = (await sql`
+    select id, device_id, date::text as date, current_position,
+           prompt_started_at::text as prompt_started_at, total_points, completed
+    from runs where device_id = ${deviceId} and date = ${date}
+  `) as RunRow[];
 
-  if (!run) {
-    const { data: created, error } = await db
-      .from("runs")
-      .insert({ device_id: deviceId, date })
-      .select("*")
-      .single<RunRow>();
-    if (error) throw error;
-    run = created;
+  if (runs.length === 0) {
+    runs = (await sql`
+      insert into runs (device_id, date) values (${deviceId}, ${date})
+      on conflict (device_id, date) do update set device_id = excluded.device_id
+      returning id, device_id, date::text as date, current_position,
+                prompt_started_at::text as prompt_started_at, total_points, completed
+    `) as RunRow[];
   }
+  const run = runs[0];
 
   const played = await getPlayedPrompts(run.id);
 
@@ -94,68 +113,48 @@ export async function getOrCreateRun(deviceId: string): Promise<RunStateDto> {
 }
 
 async function getPlayedPrompts(runId: string): Promise<PlayedPrompt[]> {
-  const db = supabaseAdmin();
-  const { data, error } = await db
-    .from("submissions")
-    .select("position, guess, status, tier, points, answers ( answer )")
-    .eq("run_id", runId)
-    .in("status", ["scored", "timeout"])
-    .order("position");
-  if (error) throw error;
-  return (data ?? []).map((row) => {
-    const ans = Array.isArray(row.answers) ? row.answers[0] : row.answers;
-    return {
-      position: row.position,
-      guess: row.guess,
-      answer: ans ? (ans as { answer: string }).answer : null,
-      tier: (row.tier as Tier) ?? null,
-      points: row.points,
-      status: row.status as "scored" | "timeout",
-    };
-  });
-}
-
-export class NoDailySetError extends Error {
-  constructor(date: string) {
-    super(`No daily set configured for ${date}`);
-    this.name = "NoDailySetError";
-  }
-}
-
-export class RunStateError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "RunStateError";
-  }
+  const sql = db();
+  const rows = (await sql`
+    select s.position, s.guess, s.status, s.tier, s.points, a.answer
+    from submissions s
+    left join answers a on a.id = s.answer_id
+    where s.run_id = ${runId} and s.status in ('scored', 'timeout')
+    order by s.position
+  `) as {
+    position: number;
+    guess: string;
+    status: "scored" | "timeout";
+    tier: Tier | null;
+    points: number;
+    answer: string | null;
+  }[];
+  return rows.map((r) => ({
+    position: r.position,
+    guess: r.guess,
+    answer: r.answer,
+    tier: r.tier,
+    points: r.points,
+    status: r.status,
+  }));
 }
 
 async function loadRun(runId: string): Promise<RunRow> {
-  const db = supabaseAdmin();
-  const { data, error } = await db
-    .from("runs")
-    .select("*")
-    .eq("id", runId)
-    .maybeSingle<RunRow>();
-  if (error) throw error;
-  if (!data) throw new RunStateError("Run not found");
-  return data;
+  const sql = db();
+  const rows = (await sql`
+    select id, device_id, date::text as date, current_position,
+           prompt_started_at::text as prompt_started_at, total_points, completed
+    from runs where id = ${runId}
+  `) as RunRow[];
+  if (rows.length === 0) throw new RunStateError("Run not found");
+  return rows[0];
 }
 
 async function loadAnswers(promptId: string): Promise<AnswerRow[]> {
-  const db = supabaseAdmin();
-  const pageSize = 1000;
-  const all: AnswerRow[] = [];
-  for (let from = 0; ; from += pageSize) {
-    const { data, error } = await db
-      .from("answers")
-      .select("id, answer, aliases, is_person, tier, points, quip")
-      .eq("prompt_id", promptId)
-      .range(from, from + pageSize - 1);
-    if (error) throw error;
-    all.push(...((data ?? []) as AnswerRow[]));
-    if (!data || data.length < pageSize) break;
-  }
-  return all;
+  const sql = db();
+  return (await sql`
+    select id, answer, aliases, is_person, tier, points, quip
+    from answers where prompt_id = ${promptId}
+  `) as AnswerRow[];
 }
 
 function toEntries(rows: AnswerRow[]): AnswerEntry[] {
@@ -167,35 +166,28 @@ function toEntries(rows: AnswerRow[]): AnswerEntry[] {
   }));
 }
 
-/** Marks the current prompt's clock as started (idempotent). */
+/** Marks the current prompt's clock as started. */
 export async function startPrompt(runId: string): Promise<void> {
-  const db = supabaseAdmin();
   const run = await loadRun(runId);
   if (run.completed) throw new RunStateError("Run already completed");
-  await db
-    .from("runs")
-    .update({ prompt_started_at: new Date().toISOString() })
-    .eq("id", runId)
-    .throwOnError();
+  await db()`
+    update runs set prompt_started_at = now() where id = ${runId}
+  `;
 }
 
 async function advanceRun(
   run: RunRow,
   pointsGained: number
 ): Promise<{ totalPoints: number; nextPosition: number | null }> {
-  const db = supabaseAdmin();
   const totalPoints = run.total_points + pointsGained;
   const next = run.current_position + 1;
   const nextPosition = next <= PROMPTS_PER_DAY ? next : null;
-  await db
-    .from("runs")
-    .update({
-      total_points: totalPoints,
-      current_position: next,
-      prompt_started_at: null,
-    })
-    .eq("id", run.id)
-    .throwOnError();
+  await db()`
+    update runs
+    set total_points = ${totalPoints}, current_position = ${next},
+        prompt_started_at = null
+    where id = ${run.id}
+  `;
   return { totalPoints, nextPosition };
 }
 
@@ -203,18 +195,10 @@ async function recordTimeout(
   run: RunRow,
   promptId: string
 ): Promise<SubmitResponse> {
-  const db = supabaseAdmin();
-  await db
-    .from("submissions")
-    .insert({
-      run_id: run.id,
-      prompt_id: promptId,
-      position: run.current_position,
-      guess: "",
-      status: "timeout",
-      points: 0,
-    })
-    .throwOnError();
+  await db()`
+    insert into submissions (run_id, prompt_id, position, guess, status, points)
+    values (${run.id}, ${promptId}, ${run.current_position}, '', 'timeout', 0)
+  `;
   const { totalPoints, nextPosition } = await advanceRun(run, 0);
   return { result: "timeout", totalPoints, nextPosition };
 }
@@ -230,7 +214,7 @@ export interface SubmitInput {
 }
 
 export async function submitGuess(input: SubmitInput): Promise<SubmitResponse> {
-  const db = supabaseAdmin();
+  const sql = db();
   const run = await loadRun(input.runId);
 
   if (run.completed) throw new RunStateError("Run already completed");
@@ -251,7 +235,7 @@ export async function submitGuess(input: SubmitInput): Promise<SubmitResponse> {
 
   // Server-side clock: late submits score nothing.
   if (run.prompt_started_at) {
-    const elapsed = Date.now() - Date.parse(run.prompt_started_at);
+    const elapsed = Date.now() - new Date(run.prompt_started_at).getTime();
     if (elapsed > PROMPT_DEADLINE_MS) {
       return recordTimeout(run, prompt.promptId);
     }
@@ -267,17 +251,11 @@ export async function submitGuess(input: SubmitInput): Promise<SubmitResponse> {
   const match = matchGuess(guess, index);
 
   if (match.type === "reject") {
-    await db
-      .from("submissions")
-      .insert({
-        run_id: run.id,
-        prompt_id: prompt.promptId,
-        position: run.current_position,
-        guess,
-        status: "rejected",
-        points: 0,
-      })
-      .throwOnError();
+    await sql`
+      insert into submissions (run_id, prompt_id, position, guess, status, points)
+      values (${run.id}, ${prompt.promptId}, ${run.current_position},
+              ${guess}, 'rejected', 0)
+    `;
     return { result: "reject", reason: match.reason };
   }
 
@@ -287,19 +265,12 @@ export async function submitGuess(input: SubmitInput): Promise<SubmitResponse> {
   }
 
   const row = rows.find((r) => r.id === match.entry.id)!;
-  await db
-    .from("submissions")
-    .insert({
-      run_id: run.id,
-      prompt_id: prompt.promptId,
-      position: run.current_position,
-      guess,
-      answer_id: row.id,
-      status: "scored",
-      tier: row.tier,
-      points: row.points,
-    })
-    .throwOnError();
+  await sql`
+    insert into submissions
+      (run_id, prompt_id, position, guess, answer_id, status, tier, points)
+    values (${run.id}, ${prompt.promptId}, ${run.current_position},
+            ${guess}, ${row.id}, 'scored', ${row.tier}, ${row.points})
+  `;
 
   const { totalPoints, nextPosition } = await advanceRun(run, row.points);
 
@@ -316,44 +287,34 @@ export async function submitGuess(input: SubmitInput): Promise<SubmitResponse> {
 }
 
 export async function completeRun(runId: string) {
-  const db = supabaseAdmin();
+  const sql = db();
   const run = await loadRun(runId);
 
   if (!run.completed) {
     if (run.current_position <= PROMPTS_PER_DAY) {
       throw new RunStateError("Run still has prompts left");
     }
-    await db
-      .from("runs")
-      .update({ completed: true })
-      .eq("id", runId)
-      .throwOnError();
+    await sql`update runs set completed = true where id = ${runId}`;
+    run.completed = true;
   }
 
-  const { count: playersToday } = await db
-    .from("runs")
-    .select("id", { count: "exact", head: true })
-    .eq("date", run.date)
-    .eq("completed", true)
-    .throwOnError();
+  const counts = (await sql`
+    select
+      count(*)::int as players_today,
+      count(*) filter (where total_points < ${run.total_points})::int as beaten
+    from runs where date = ${run.date} and completed = true
+  `) as { players_today: number; beaten: number }[];
 
-  const { count: beaten } = await db
-    .from("runs")
-    .select("id", { count: "exact", head: true })
-    .eq("date", run.date)
-    .eq("completed", true)
-    .lt("total_points", run.total_points)
-    .throwOnError();
-
-  const total = playersToday ?? 0;
+  const total = counts[0]?.players_today ?? 0;
+  const beaten = counts[0]?.beaten ?? 0;
   const percentile =
-    total > 1 ? Math.round(((beaten ?? 0) / (total - 1)) * 100) : null;
+    total > 1 ? Math.round((beaten / (total - 1)) * 100) : null;
 
   return { run, playersToday: total, percentile };
 }
 
 export async function revealAnswers(runId: string) {
-  const db = supabaseAdmin();
+  const sql = db();
   const run = await loadRun(runId);
   if (!run.completed) {
     throw new RunStateError("Finish the run before the reveal");
@@ -364,18 +325,14 @@ export async function revealAnswers(runId: string) {
   for (const prompt of prompts) {
     const rows = await loadAnswers(prompt.promptId);
 
-    const { data: counts, error } = await db
-      .from("submissions")
-      .select("answer_id")
-      .eq("prompt_id", prompt.promptId)
-      .eq("status", "scored");
-    if (error) throw error;
-    const countByAnswer = new Map<string, number>();
-    for (const c of counts ?? []) {
-      if (c.answer_id) {
-        countByAnswer.set(c.answer_id, (countByAnswer.get(c.answer_id) ?? 0) + 1);
-      }
-    }
+    const counts = (await sql`
+      select answer_id, count(*)::int as times
+      from submissions
+      where prompt_id = ${prompt.promptId} and status = 'scored'
+        and answer_id is not null
+      group by answer_id
+    `) as { answer_id: string; times: number }[];
+    const countByAnswer = new Map(counts.map((c) => [c.answer_id, c.times]));
 
     const toDto = (r: AnswerRow) => ({
       answer: r.answer,
@@ -389,9 +346,10 @@ export async function revealAnswers(runId: string) {
       position: prompt.position,
       promptId: prompt.promptId,
       text: prompt.text,
+      // Most familiar first: the names everyone types, down to deep cuts.
       answers: rows
         .slice()
-        .sort((a, b) => b.points - a.points || a.answer.localeCompare(b.answer))
+        .sort((a, b) => a.points - b.points || a.answer.localeCompare(b.answer))
         .map(toDto),
       gems: rows.filter((r) => r.tier === "hail_mary").map(toDto),
     });
@@ -400,21 +358,13 @@ export async function revealAnswers(runId: string) {
 }
 
 export async function answerPopularity(promptId: string) {
-  const db = supabaseAdmin();
-  const { data, error } = await db
-    .from("submissions")
-    .select("answer_id, answers ( answer )")
-    .eq("prompt_id", promptId)
-    .eq("status", "scored");
-  if (error) throw error;
-  const byAnswer = new Map<string, { answer: string; count: number }>();
-  for (const row of data ?? []) {
-    if (!row.answer_id) continue;
-    const ans = Array.isArray(row.answers) ? row.answers[0] : row.answers;
-    const name = ans ? (ans as { answer: string }).answer : "";
-    const existing = byAnswer.get(row.answer_id);
-    if (existing) existing.count += 1;
-    else byAnswer.set(row.answer_id, { answer: name, count: 1 });
-  }
-  return [...byAnswer.values()].sort((a, b) => b.count - a.count);
+  const rows = (await db()`
+    select a.answer, count(*)::int as count
+    from submissions s
+    join answers a on a.id = s.answer_id
+    where s.prompt_id = ${promptId} and s.status = 'scored'
+    group by a.answer
+    order by count desc
+  `) as { answer: string; count: number }[];
+  return rows;
 }

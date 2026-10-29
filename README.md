@@ -5,7 +5,7 @@ One in a statillion. A free daily sports trivia web game where the rarest valid 
 ## Stack
 
 - Next.js (App Router, TypeScript) on Vercel
-- Supabase (Postgres) - answers and tiers stay server-side until a run is complete
+- Neon (Postgres) - answers and tiers stay server-side until a run is complete
 - Python pipeline under `/pipeline` built on nflverse (nflreadpy)
 
 ## Development
@@ -18,8 +18,7 @@ npm run dev
 Environment variables (`.env.local`, also set on Vercel):
 
 ```
-SUPABASE_URL=https://<project>.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=<service role key, server only>
+DATABASE_URL=postgresql://... (Neon connection string, server only)
 ```
 
 Run the matching unit tests:
@@ -40,9 +39,8 @@ python -m venv .venv
 `generate.py` writes one JSON per prompt to `pipeline/output/` for review, flagging any prompt with fewer than 200 answers. Tier assignments, aliases, and `suggested_hail_mary` picks are all editable there. After review:
 
 ```bash
-set SUPABASE_URL=...
-set SUPABASE_SERVICE_ROLE_KEY=...
-.venv\Scripts\python load_supabase.py --start-date 2026-11-01
+set DATABASE_URL=...
+.venv\Scripts\python load_db.py --start-date 2026-11-01
 ```
 
 ## Swapping in final runner art

@@ -1,6 +1,5 @@
--- Statillion initial schema.
--- All access goes through the server with the service role key.
--- RLS is enabled with no policies so the anon key can read nothing:
+-- Statillion initial schema (Neon Postgres).
+-- The database is reachable only through the server's DATABASE_URL:
 -- answers and tiers never reach the client before a run is complete.
 
 create table prompts (
@@ -71,10 +70,3 @@ create unique index submissions_one_result_per_position
   on submissions (run_id, position) where status in ('scored', 'timeout');
 create index submissions_answer_idx on submissions (answer_id) where answer_id is not null;
 create index submissions_prompt_rejected_idx on submissions (prompt_id) where status = 'rejected';
-
-alter table prompts enable row level security;
-alter table answers enable row level security;
-alter table daily_sets enable row level security;
-alter table players enable row level security;
-alter table runs enable row level security;
-alter table submissions enable row level security;
