@@ -307,9 +307,10 @@ export default function PlayPage() {
   const prompt = run?.prompts.find((p) => p.position === position);
   const inFinalFive = phase === "active" && secondsLeft <= 5 && secondsLeft > 0;
 
-  // Between prompts he pulls up, hands on knees (stop -> idle breathing);
-  // a timeout sends him sprawling instead. He is back up and jogging as
-  // soon as the next countdown starts.
+  // He bounces on his toes while a prompt is live (the track only moves
+  // when he scores, so a jog here reads as a treadmill), sprints to
+  // cover a scored gain, then pulls up hands-on-knees (stop -> rest).
+  // A timeout sends him sprawling instead.
   const animation: RunnerAnimation =
     phase === "finishing"
       ? "dip"
@@ -317,9 +318,7 @@ export default function PlayPage() {
         ? feedback?.kind === "timeout"
           ? "fall"
           : "stop"
-        : phase === "active" || phase === "countdown"
-          ? "jog"
-          : "idle";
+        : "idle";
 
   if (phase === "loading") {
     return <main className={styles.message}>Loading today&apos;s run...</main>;
@@ -467,7 +466,7 @@ export default function PlayPage() {
                   Time!
                 </div>
                 <div className={styles.feedbackPoints}>
-                  0 points. The runner keeps jogging.
+                  0 points. Down goes the runner.
                 </div>
               </>
             )}

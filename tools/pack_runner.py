@@ -22,6 +22,10 @@ FOOT_Y = 121
 
 # name: (file prefix, 1-based frame numbers, fps, loop, next)
 # Celebration frames 4, 9, 10 and 11 came out corrupted and are skipped.
+# The generator drew the second half of the trip (frames 7-12) about
+# 1.4x too large; those are scaled back down to the standing size.
+SCALE = {("trip_and_fall", i): 0.72 for i in range(7, 13)}
+
 ANIMS = {
     "idle": ("idle_bouncing", range(1, 9), 8, True, None),
     "rest": ("exhausted_stop", range(9, 13), 5, True, None),
@@ -89,9 +93,31 @@ def clean(a):
     return a
 
 
+def shrink(a, factor):
+    """Downscale pixel art: premultiplied box filter, hard alpha edge,
+    anchored on the ground line and horizontal center."""
+    f = a.astype(float)
+    al = f[..., 3:4] / 255
+    pm = Image.fromarray(np.dstack([f[..., :3] * al, f[..., 3:4]]).astype(np.uint8), "RGBA")
+    small = np.array(pm.resize((round(FW * factor), round(FH * factor)), Image.BOX)).astype(float)
+    sal = small[..., 3:4] / 255
+    rgb = np.clip(small[..., :3] / np.maximum(sal, 1e-3), 0, 255)
+    out = np.zeros_like(small, dtype=np.uint8)
+    out[..., :3] = rgb
+    out[..., 3] = (sal[..., 0] > 0.45) * 255
+    canvas = np.zeros((FH, FW, 4), dtype=np.uint8)
+    h, w = out.shape[:2]
+    oy = FOOT_Y - round(FOOT_Y * factor)
+    ox = FW // 2 - w // 2
+    canvas[oy:oy + h, ox:ox + w] = out
+    return canvas
+
+
 def load(prefix, i):
     a = np.array(Image.open(f"{SRC}/{prefix}_{i:02d}.png").convert("RGBA"))
     a = clean(a)
+    if (prefix, i) in SCALE:
+        a = shrink(a, SCALE[(prefix, i)])
     img = Image.new("RGBA", (FW, FH), (0, 0, 0, 0))
     ImageDraw.Draw(img).ellipse(
         [FW // 2 - 26, FOOT_Y - 3, FW // 2 + 24, FOOT_Y + 4], fill=(10, 8, 20, 70)

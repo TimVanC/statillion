@@ -6,7 +6,8 @@
 
 import { LANDMARKS } from "@/lib/scoring";
 
-export const PX_PER_METER = 0.35;
+// Scene pixels per metre: 100 m is about one phone-screen width.
+export const PX_PER_METER = 1.6;
 
 // Layout fractions of the scene height.
 const SKY_END = 0.36;
@@ -35,7 +36,7 @@ export function metrics(w: number, h: number): SceneMetrics {
     standsEnd,
     grassEnd,
     trackTop: grassEnd,
-    runnerScreenX: Math.round(w * 0.22),
+    runnerScreenX: Math.max(72, Math.round(w * 0.22)),
     runnerFootY: Math.round(h * 0.95),
   };
 }
