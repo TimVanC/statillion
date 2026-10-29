@@ -26,6 +26,8 @@ FOOT_Y = 121
 # 1.4x too large; those are scaled back down to the standing size.
 SCALE = {("trip_and_fall", i): 0.72 for i in range(7, 13)}
 
+# The run cycle is the corrected alternating-leg set; the first set
+# (same leg forward in every frame) is kept as runner_v1_NN.
 ANIMS = {
     "idle": ("idle_bouncing", range(1, 9), 8, True, None),
     "rest": ("exhausted_stop", range(9, 13), 5, True, None),
@@ -153,6 +155,10 @@ def anchor_feet(a):
 # Sets whose frames drift sideways; anchored on the feet.
 ANCHOR = {"get_up", "idle_stretching"}
 
+# Whole-set vertical nudges: the corrected run cycle's contact frames
+# touch down on row 118, three rows above the ground line.
+SHIFT_Y = {"runner": 3}
+
 
 def load(prefix, i):
     a = np.array(Image.open(f"{SRC}/{prefix}_{i:02d}.png").convert("RGBA"))
@@ -161,6 +167,8 @@ def load(prefix, i):
         a = shrink(a, SCALE[(prefix, i)])
     if prefix in ANCHOR:
         a = anchor_feet(a)
+    if prefix in SHIFT_Y:
+        a = np.roll(a, SHIFT_Y[prefix], axis=0)
     img = Image.new("RGBA", (FW, FH), (0, 0, 0, 0))
     ImageDraw.Draw(img).ellipse(
         [FW // 2 - 26, FOOT_Y - 3, FW // 2 + 24, FOOT_Y + 4], fill=(10, 8, 20, 70)
