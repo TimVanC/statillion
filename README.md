@@ -1,0 +1,66 @@
+# Statillion
+
+One in a statillion. A free daily sports trivia web game where the rarest valid answer wins. Seven prompts a day, 25 seconds each; deep cuts send a pixel runner toward the marathon line.
+
+## Stack
+
+- Next.js (App Router, TypeScript) on Vercel
+- Supabase (Postgres) - answers and tiers stay server-side until a run is complete
+- Python pipeline under `/pipeline` built on nflverse (nflreadpy)
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Environment variables (`.env.local`, also set on Vercel):
+
+```
+SUPABASE_URL=https://<project>.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=<service role key, server only>
+```
+
+Run the matching unit tests:
+
+```bash
+npm test
+```
+
+## Data pipeline
+
+```bash
+cd pipeline
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python generate.py
+```
+
+`generate.py` writes one JSON per prompt to `pipeline/output/` for review, flagging any prompt with fewer than 200 answers. Tier assignments, aliases, and `suggested_hail_mary` picks are all editable there. After review:
+
+```bash
+set SUPABASE_URL=...
+set SUPABASE_SERVICE_ROLE_KEY=...
+.venv\Scripts\python load_supabase.py --start-date 2026-11-01
+```
+
+## Swapping in final runner art
+
+The runner is a swappable sprite-sheet component. Drop PNG sheets (one row per animation, transparent background, 48x48 frames) into `public/sprites/` along with `public/sprites/manifest.json`:
+
+```json
+{
+  "idle":      { "src": "/sprites/idle.png",      "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 5 },
+  "jog":       { "src": "/sprites/jog.png",       "frames": 6, "frameWidth": 48, "frameHeight": 48, "fps": 10 },
+  "sprint":    { "src": "/sprites/sprint.png",    "frames": 8, "frameWidth": 48, "frameHeight": 48, "fps": 14 },
+  "dip":       { "src": "/sprites/dip.png",       "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 8, "loop": false },
+  "celebrate": { "src": "/sprites/celebrate.png", "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 6 }
+}
+```
+
+No code changes needed; without a manifest the game draws a code-generated placeholder runner.
+
+## Swapping in final sounds
+
+Replace the files in `public/sounds/` keeping the same names (`whistle`, `bwomp`, `cheer-small`, `cheer-mid`, `cheer-big`, `hail-mary`, `landmark`, `heartbeat`, `finish`, `jingle`, `crowd-loop`). All playback routes through `lib/audio.ts`; sound stays off until the first tap and the mute preference is remembered per device.

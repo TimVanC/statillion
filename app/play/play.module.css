@@ -1,0 +1,318 @@
+.center {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.screen {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  border: 6px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+/* Final-5-seconds warning: pulsing red border, stronger each second. */
+.pulseBorder {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.pulseBorder[data-pulse-strength="1"] { --pulse-max: 0.45; }
+.pulseBorder[data-pulse-strength="2"] { --pulse-max: 0.6; }
+.pulseBorder[data-pulse-strength="3"] { --pulse-max: 0.72; }
+.pulseBorder[data-pulse-strength="4"] { --pulse-max: 0.85; }
+.pulseBorder[data-pulse-strength="5"] { --pulse-max: 1; }
+
+@keyframes pulse {
+  0% { border-color: rgba(227, 59, 59, 0); }
+  30% { border-color: rgba(227, 59, 59, var(--pulse-max, 1)); }
+  100% { border-color: rgba(227, 59, 59, 0); }
+}
+
+/* Reduce-motion users get a steady red border instead. */
+.steadyBorder {
+  border-color: var(--danger);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px 6px;
+}
+
+.distance {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 90px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: rgba(242, 237, 228, 0.25);
+}
+
+.dotActive {
+  background: var(--gold);
+}
+
+.dotDone {
+  background: var(--accent);
+}
+
+.muteButton {
+  background: none;
+  border: 2px solid rgba(242, 237, 228, 0.35);
+  color: var(--cream);
+  font-size: 10px;
+  padding: 5px 7px;
+  border-radius: 6px;
+}
+
+.promptArea {
+  padding: 6px 14px;
+  min-height: 92px;
+  display: flex;
+  align-items: stretch;
+}
+
+.promptCard {
+  flex: 1;
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 12px;
+  border: 3px solid var(--navy-light);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.promptNumber {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.canvasWrap {
+  position: relative;
+  flex: 1;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.overlayNumber {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 84px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.tapOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 39, 68, 0.72);
+  color: var(--cream);
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.feedbackCard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 14px;
+  border: 3px solid var(--navy-light);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 230px;
+  text-align: center;
+}
+
+.tierBadge {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--navy-light);
+}
+
+.tierBadge[data-tier="ten_day"] { background: #8a7a63; }
+.tierBadge[data-tier="trick_play"] { background: #9b59b6; }
+.tierBadge[data-tier="role_player"] { background: #3f6fb5; }
+.tierBadge[data-tier="all_star"] { background: #d9a013; }
+.tierBadge[data-tier="hall_of_famer"] { background: #2e9e52; }
+.tierBadge[data-tier="hail_mary"] { background: #e9502a; }
+.tierBadge[data-tier="timeout"] { background: #555; }
+
+.feedbackAnswer {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.feedbackPoints {
+  font-size: 14px;
+  color: #444;
+}
+
+.nextButton {
+  margin-top: 4px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 3px 0 #b23616;
+}
+
+.inputArea {
+  padding: 10px 14px calc(14px + env(safe-area-inset-bottom));
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.timerRow {
+  position: relative;
+  height: 18px;
+  background: rgba(242, 237, 228, 0.15);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.timerBar {
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.2s linear;
+}
+
+.timerBarDanger {
+  background: var(--danger);
+}
+
+.timerText {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  line-height: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  mix-blend-mode: normal;
+}
+
+.suggestion {
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.rejectMsg {
+  color: #ffb3a7;
+  font-size: 13px;
+  padding: 0 2px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shake { animation: none; }
+}
+
+.input {
+  flex: 1;
+  background: #fff;
+  color: var(--text);
+  border: 3px solid var(--navy-light);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  min-width: 0;
+}
+
+.input:focus {
+  outline: 3px solid var(--gold);
+}
+
+.runButton {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 22px;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 3px 0 #b23616;
+}
+
+.runButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #b23616;
+}
+
+/* Desktop: wider than square gets the landscape layout. */
+@media (min-aspect-ratio: 1/1) {
+  .promptArea {
+    max-width: 480px;
+  }
+
+  .inputArea {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
