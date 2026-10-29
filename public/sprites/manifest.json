@@ -1,10 +1,10 @@
 {
   "idle": {
     "src": "/sprites/idle.png",
-    "frames": 2,
+    "frames": 1,
     "frameWidth": 128,
     "frameHeight": 128,
-    "fps": 4
+    "fps": 2
   },
   "jog": {
     "src": "/sprites/jog.png",
@@ -18,11 +18,11 @@
     "frames": 8,
     "frameWidth": 128,
     "frameHeight": 128,
-    "fps": 14
+    "fps": 16
   },
   "dip": {
     "src": "/sprites/dip.png",
-    "frames": 4,
+    "frames": 1,
     "frameWidth": 128,
     "frameHeight": 128,
     "fps": 8,
@@ -30,7 +30,7 @@
   },
   "celebrate": {
     "src": "/sprites/celebrate.png",
-    "frames": 4,
+    "frames": 1,
     "frameWidth": 128,
     "frameHeight": 128,
     "fps": 5
