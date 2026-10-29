@@ -57,7 +57,7 @@ The runner is a swappable sprite-sheet component. Drop PNG sheets (one row per a
 }
 ```
 
-The current sheets are sliced from the 4x2 run-cycle image in `art/runner-run-cycle.webp` by `tools/slice_runner.py` (`python tools/slice_runner.py art/runner-run-cycle.webp public/sprites`, needs Pillow and numpy). Idle, dip and celebrate currently reuse single run frames until dedicated art exists. Without a manifest the game draws a code-generated placeholder runner.
+The current sheets are packed from the 128x128 frames in `art/runner/` by `tools/pack_runner.py` (`python tools/pack_runner.py art/runner public/sprites`, needs Pillow and numpy); feet sit on row 121. Idle, dip and celebrate currently reuse single run frames until dedicated art exists. Without a manifest the game draws a code-generated placeholder runner.
 
 ## Swapping in final sounds
 
