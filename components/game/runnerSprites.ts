@@ -7,17 +7,26 @@
  * it generates a code-drawn placeholder with the same interface, so
  * dropping in final art later needs no code changes.
  *
- * Manifest format (public/sprites/manifest.json):
+ * Manifest format (public/sprites/manifest.json), built by
+ * tools/pack_runner.py from the frames in art/runner:
  * {
- *   "idle":      { "src": "/sprites/idle.png",      "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 5 },
- *   "jog":       { "src": "/sprites/jog.png",       "frames": 6, "frameWidth": 64, "frameHeight": 64, "fps": 10 },
- *   "sprint":    { "src": "/sprites/sprint.png",    "frames": 8, "frameWidth": 64, "frameHeight": 64, "fps": 14 },
- *   "dip":       { "src": "/sprites/dip.png",       "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 8, "loop": false },
- *   "celebrate": { "src": "/sprites/celebrate.png", "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 6 }
+ *   "jog":  { "src": "/sprites/jog.png",  "frames": 8, "frameWidth": 128, "frameHeight": 128, "fps": 10 },
+ *   "stop": { "src": "/sprites/stop.png", "frames": 8, "frameWidth": 128, "frameHeight": 128, "fps": 10, "loop": false, "next": "idle" }
  * }
  */
 
-export type RunnerAnimation = "idle" | "jog" | "sprint" | "dip" | "celebrate";
+export type RunnerAnimation =
+  | "idle" // bouncing on the line before the run
+  | "rest" // hands on knees, breathing (between prompts)
+  | "jog"
+  | "sprint"
+  | "stop" // pulls up after a scored answer, then rest
+  | "fall" // trips after a timeout
+  | "dip" // finish-line lean, then celebrate
+  | "celebrate";
+export const RUNNER_ANIMATIONS: RunnerAnimation[] = [
+  "idle", "rest", "jog", "sprint", "stop", "fall", "dip", "celebrate",
+];
 
 export interface SpriteSheet {
   image: CanvasImageSource;
@@ -26,6 +35,8 @@ export interface SpriteSheet {
   frameHeight: number;
   fps: number;
   loop: boolean;
+  /** For play-once sheets: the animation to continue with afterwards. */
+  next?: RunnerAnimation;
 }
 
 export type RunnerSprites = Record<RunnerAnimation, SpriteSheet>;
@@ -324,11 +335,16 @@ export function generatePlaceholderSprites(): RunnerSprites {
     armsUp: true,
   }));
 
+  const idleSheet = makeSheet(idle, 4, true);
+  const dipSheet = makeSheet(dip, 8, false);
   return {
-    idle: makeSheet(idle, 4, true),
+    idle: idleSheet,
+    rest: idleSheet,
     jog: makeSheet(runCycle(0.75, 0.12, 33, false), 10, true),
     sprint: makeSheet(runCycle(1.0, 0.3, 32, true), 14, true),
-    dip: makeSheet(dip, 8, false),
+    stop: { ...makeSheet(idle, 4, false), next: "rest" },
+    fall: dipSheet,
+    dip: { ...dipSheet, next: "celebrate" },
     celebrate: makeSheet(celebrate, 5, true),
   };
 }
@@ -349,6 +365,7 @@ interface ManifestEntry {
   frameHeight: number;
   fps: number;
   loop?: boolean;
+  next?: RunnerAnimation;
 }
 
 export async function loadRunnerSprites(): Promise<RunnerSprites> {
@@ -356,9 +373,8 @@ export async function loadRunnerSprites(): Promise<RunnerSprites> {
     const res = await fetch("/sprites/manifest.json");
     if (res.ok) {
       const manifest = (await res.json()) as Record<RunnerAnimation, ManifestEntry>;
-      const names: RunnerAnimation[] = ["idle", "jog", "sprint", "dip", "celebrate"];
       const sheets = await Promise.all(
-        names.map(async (name) => {
+        RUNNER_ANIMATIONS.map(async (name) => {
           const m = manifest[name];
           const image = await loadImage(m.src);
           return [
@@ -370,6 +386,7 @@ export async function loadRunnerSprites(): Promise<RunnerSprites> {
               frameHeight: m.frameHeight,
               fps: m.fps,
               loop: m.loop !== false,
+              next: m.next,
             },
           ] as const;
         })

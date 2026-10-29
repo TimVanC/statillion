@@ -307,12 +307,19 @@ export default function PlayPage() {
   const prompt = run?.prompts.find((p) => p.position === position);
   const inFinalFive = phase === "active" && secondsLeft <= 5 && secondsLeft > 0;
 
+  // Between prompts he pulls up, hands on knees (stop -> idle breathing);
+  // a timeout sends him sprawling instead. He is back up and jogging as
+  // soon as the next countdown starts.
   const animation: RunnerAnimation =
     phase === "finishing"
       ? "dip"
-      : phase === "active" || phase === "countdown" || phase === "feedback"
-        ? "jog"
-        : "idle";
+      : phase === "feedback"
+        ? feedback?.kind === "timeout"
+          ? "fall"
+          : "stop"
+        : phase === "active" || phase === "countdown"
+          ? "jog"
+          : "idle";
 
   if (phase === "loading") {
     return <main className={styles.message}>Loading today&apos;s run...</main>;

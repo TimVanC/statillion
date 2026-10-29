@@ -7,9 +7,9 @@
 
 import { useState } from "react";
 import GameCanvas from "@/components/game/GameCanvas";
-import type { RunnerAnimation } from "@/components/game/runnerSprites";
+import { RUNNER_ANIMATIONS, type RunnerAnimation } from "@/components/game/runnerSprites";
 
-const ANIMATIONS: RunnerAnimation[] = ["idle", "jog", "sprint", "dip", "celebrate"];
+const ANIMATIONS = RUNNER_ANIMATIONS;
 
 export default function DevScenePage() {
   const [distance, setDistance] = useState(0);

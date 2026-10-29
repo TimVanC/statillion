@@ -39,7 +39,8 @@ export default function GameCanvas({ distanceMeters, animation, onLandmark }: Pr
     sprintFrom: 0,
     baseAnimation: "idle" as RunnerAnimation,
     animStart: 0,
-    lastAnim: "idle" as RunnerAnimation,
+    requested: "idle" as RunnerAnimation,
+    playing: "idle" as RunnerAnimation,
     passed: new Set<string>(),
     onLandmark: undefined as Props["onLandmark"],
   });
@@ -108,9 +109,12 @@ export default function GameCanvas({ distanceMeters, animation, onLandmark }: Pr
         }
       }
 
+      // The requested animation plays; a play-once sheet with a `next`
+      // chains into it when it finishes (stop -> idle breathing).
       const anim: RunnerAnimation = catchingUp ? "sprint" : st.baseAnimation;
-      if (anim !== st.lastAnim) {
-        st.lastAnim = anim;
+      if (anim !== st.requested) {
+        st.requested = anim;
+        st.playing = anim;
         st.animStart = now;
       }
 
@@ -129,9 +133,16 @@ export default function GameCanvas({ distanceMeters, animation, onLandmark }: Pr
 
       const sprites = spritesRef.current;
       if (sprites) {
-        const sheet: SpriteSheet = sprites[anim];
-        const elapsed = (now - st.animStart) / 1000;
+        let sheet: SpriteSheet = sprites[st.playing];
+        let elapsed = (now - st.animStart) / 1000;
         let frameIndex = Math.floor(elapsed * sheet.fps);
+        if (!sheet.loop && sheet.next && frameIndex >= sheet.frames) {
+          st.playing = sheet.next;
+          st.animStart = now;
+          sheet = sprites[st.playing];
+          elapsed = 0;
+          frameIndex = 0;
+        }
         frameIndex = sheet.loop
           ? frameIndex % sheet.frames
           : Math.min(frameIndex, sheet.frames - 1);

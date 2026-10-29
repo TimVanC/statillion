@@ -43,22 +43,12 @@ set DATABASE_URL=...
 .venv\Scripts\python load_db.py --start-date 2026-11-01
 ```
 
-## Swapping in final runner art
+## Runner art
 
-The runner is a swappable sprite-sheet component. Drop PNG sheets (one row per animation, transparent background, 64x64 frames) into `public/sprites/` along with `public/sprites/manifest.json`:
+The runner is a sprite-sheet component. Frames live in `art/runner/` as 128x128 transparent PNGs (feet on row 121): `runner_01..08` (run cycle), `idle_bouncing/breathing/stretching_01..08`, `exhausted_stop_01..12`, `trip_and_fall_01..12`, `finish_line_lean_01..08`, `celebration_01..12`. Pack them into `public/sprites/` with:
 
-```json
-{
-  "idle":      { "src": "/sprites/idle.png",      "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 5 },
-  "jog":       { "src": "/sprites/jog.png",       "frames": 6, "frameWidth": 64, "frameHeight": 64, "fps": 10 },
-  "sprint":    { "src": "/sprites/sprint.png",    "frames": 8, "frameWidth": 64, "frameHeight": 64, "fps": 14 },
-  "dip":       { "src": "/sprites/dip.png",       "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 8, "loop": false },
-  "celebrate": { "src": "/sprites/celebrate.png", "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 6 }
-}
+```bash
+python tools/pack_runner.py art/runner public/sprites
 ```
 
-The current sheets are packed from the 128x128 frames in `art/runner/` by `tools/pack_runner.py` (`python tools/pack_runner.py art/runner public/sprites`, needs Pillow and numpy); feet sit on row 121. Idle, dip and celebrate currently reuse single run frames until dedicated art exists. Without a manifest the game draws a code-generated placeholder runner.
-
-## Swapping in final sounds
-
-Replace the files in `public/sounds/` keeping the same names (`whistle`, `bwomp`, `cheer-small`, `cheer-mid`, `cheer-big`, `hail-mary`, `landmark`, `heartbeat`, `finish`, `jingle`, `crowd-loop`). All playback routes through `lib/audio.ts`; sound stays off until the first tap and the mute preference is remembered per device.
+(needs Pillow and numpy). The manifest it writes maps game animations to sheets: `idle` (bouncing loop before the run), `rest` (hands-on-knees breathing between prompts), `jog`, `sprint`, `stop` (plays once, then `next: rest`), `fall` (plays once, holds), `dip` (finish lean, then `next: celebrate`) and `celebrate` (loop). Without a manifest the game draws a code-generated placeholder runner.
