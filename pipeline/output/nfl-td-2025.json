@@ -1,0 +1,3598 @@
+{
+  "slug": "nfl-td-2025",
+  "sport": "NFL",
+  "prompt_text": "Name an NFL player who scored a touchdown in the 2025 season",
+  "prompt_type": "stat_threshold",
+  "note": "Rushing, receiving, return, and defensive touchdowns, 2025 regular season",
+  "answer_count": 386,
+  "flagged_under_200": false,
+  "answers": [
+    {
+      "answer": "Aaron Rodgers",
+      "aliases": [
+        "A-Rod"
+      ],
+      "is_person": true,
+      "score": 825015,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Josh Allen",
+      "aliases": [],
+      "is_person": true,
+      "score": 765581,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Kenneth Walker III",
+      "aliases": [
+        "Kenneth Walker"
+      ],
+      "is_person": true,
+      "score": 638825,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Travis Kelce",
+      "aliases": [
+        "Big Yeti"
+      ],
+      "is_person": true,
+      "score": 597271,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Cam Skattebo",
+      "aliases": [],
+      "is_person": true,
+      "score": 548161,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Tyler Shough",
+      "aliases": [],
+      "is_person": true,
+      "score": 523571,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Patrick Mahomes",
+      "aliases": [
+        "Showtime Mahomes"
+      ],
+      "is_person": true,
+      "score": 485537,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Jameis Winston",
+      "aliases": [],
+      "is_person": true,
+      "score": 484449,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Kirk Cousins",
+      "aliases": [
+        "Kirko Chainz"
+      ],
+      "is_person": true,
+      "score": 480797,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "J.J. McCarthy",
+      "aliases": [
+        "JJ McCarthy"
+      ],
+      "is_person": true,
+      "score": 467098,
+      "quip": null,
+      "tier": "ten_day",
+      "points": 10
+    },
+    {
+      "answer": "Jalen Hurts",
+      "aliases": [
+        "Hurts So Good"
+      ],
+      "is_person": true,
+      "score": 453412,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Jaxson Dart",
+      "aliases": [],
+      "is_person": true,
+      "score": 449799,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Brock Purdy",
+      "aliases": [
+        "Mr. Irrelevant"
+      ],
+      "is_person": true,
+      "score": 421077,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Tyreek Hill",
+      "aliases": [
+        "Cheetah"
+      ],
+      "is_person": true,
+      "score": 397882,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Christian McCaffrey",
+      "aliases": [
+        "CMC",
+        "Run CMC"
+      ],
+      "is_person": true,
+      "score": 349625,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Derrick Henry",
+      "aliases": [
+        "King Henry"
+      ],
+      "is_person": true,
+      "score": 335937,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Jayden Daniels",
+      "aliases": [],
+      "is_person": true,
+      "score": 333697,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Jaxon Smith-Njigba",
+      "aliases": [],
+      "is_person": true,
+      "score": 332855,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Bijan Robinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 325721,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Bryce Young",
+      "aliases": [],
+      "is_person": true,
+      "score": 321464,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Dak Prescott",
+      "aliases": [],
+      "is_person": true,
+      "score": 313240,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Kyler Murray",
+      "aliases": [],
+      "is_person": true,
+      "score": 296913,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Caleb Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 296513,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Bo Nix",
+      "aliases": [],
+      "is_person": true,
+      "score": 296094,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Drake Maye",
+      "aliases": [],
+      "is_person": true,
+      "score": 292906,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Justin Herbert",
+      "aliases": [],
+      "is_person": true,
+      "score": 292629,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Stefon Diggs",
+      "aliases": [],
+      "is_person": true,
+      "score": 283582,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Davante Adams",
+      "aliases": [
+        "Tae"
+      ],
+      "is_person": true,
+      "score": 283065,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Puka Nacua",
+      "aliases": [],
+      "is_person": true,
+      "score": 274254,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Marvin Harrison Jr.",
+      "aliases": [
+        "Marvin Harrison",
+        "Marvin Harrison Jr"
+      ],
+      "is_person": true,
+      "score": 254395,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Michael Penix Jr.",
+      "aliases": [
+        "Michael Penix",
+        "Michael Penix Jr"
+      ],
+      "is_person": true,
+      "score": 249081,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Lamar Jackson",
+      "aliases": [
+        "Action Jackson"
+      ],
+      "is_person": true,
+      "score": 241373,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Baker Mayfield",
+      "aliases": [],
+      "is_person": true,
+      "score": 235341,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Marcus Mariota",
+      "aliases": [],
+      "is_person": true,
+      "score": 234229,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Malik Willis",
+      "aliases": [],
+      "is_person": true,
+      "score": 221661,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Cam Ward",
+      "aliases": [],
+      "is_person": true,
+      "score": 200991,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Luke McCaffrey",
+      "aliases": [],
+      "is_person": true,
+      "score": 200786,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Jahmyr Gibbs",
+      "aliases": [],
+      "is_person": true,
+      "score": 200397,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Trevor Lawrence",
+      "aliases": [
+        "T-Law"
+      ],
+      "is_person": true,
+      "score": 192105,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "Saquon Barkley",
+      "aliases": [
+        "Saquads"
+      ],
+      "is_person": true,
+      "score": 188246,
+      "quip": null,
+      "tier": "role_player",
+      "points": 30
+    },
+    {
+      "answer": "A.J. Brown",
+      "aliases": [
+        "AJ Brown"
+      ],
+      "is_person": true,
+      "score": 178417,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "CeeDee Lamb",
+      "aliases": [],
+      "is_person": true,
+      "score": 176636,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "George Kittle",
+      "aliases": [],
+      "is_person": true,
+      "score": 170822,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Joe Flacco",
+      "aliases": [],
+      "is_person": true,
+      "score": 163988,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Cooper Kupp",
+      "aliases": [],
+      "is_person": true,
+      "score": 161541,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Daniel Jones",
+      "aliases": [],
+      "is_person": true,
+      "score": 155860,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Justin Jefferson",
+      "aliases": [
+        "Jets",
+        "JJettas"
+      ],
+      "is_person": true,
+      "score": 155202,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Amon-Ra St. Brown",
+      "aliases": [
+        "Amon-Ra St Brown",
+        "Sun God"
+      ],
+      "is_person": true,
+      "score": 154081,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jacoby Brissett",
+      "aliases": [],
+      "is_person": true,
+      "score": 153583,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Travis Hunter",
+      "aliases": [],
+      "is_person": true,
+      "score": 150071,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Josh Jacobs",
+      "aliases": [],
+      "is_person": true,
+      "score": 149289,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Zach Ertz",
+      "aliases": [],
+      "is_person": true,
+      "score": 147546,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "C.J. Stroud",
+      "aliases": [
+        "CJ Stroud"
+      ],
+      "is_person": true,
+      "score": 147268,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DK Metcalf",
+      "aliases": [
+        "D.K. Metcalf"
+      ],
+      "is_person": true,
+      "score": 139055,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jonathan Taylor",
+      "aliases": [
+        "JT"
+      ],
+      "is_person": true,
+      "score": 137233,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Taysom Hill",
+      "aliases": [],
+      "is_person": true,
+      "score": 136733,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Alvin Kamara",
+      "aliases": [],
+      "is_person": true,
+      "score": 132316,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tetairoa McMillan",
+      "aliases": [],
+      "is_person": true,
+      "score": 131024,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Parker Washington",
+      "aliases": [],
+      "is_person": true,
+      "score": 130322,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "James Cook",
+      "aliases": [],
+      "is_person": true,
+      "score": 127847,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Justin Fields",
+      "aliases": [],
+      "is_person": true,
+      "score": 126607,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ja'Marr Chase",
+      "aliases": [
+        "Uno"
+      ],
+      "is_person": true,
+      "score": 120206,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Trey McBride",
+      "aliases": [],
+      "is_person": true,
+      "score": 114305,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Isaiah Likely",
+      "aliases": [],
+      "is_person": true,
+      "score": 107924,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Shedeur Sanders",
+      "aliases": [],
+      "is_person": true,
+      "score": 107435,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "D'Andre Swift",
+      "aliases": [],
+      "is_person": true,
+      "score": 104750,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DeVonta Smith",
+      "aliases": [],
+      "is_person": true,
+      "score": 104478,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Brock Bowers",
+      "aliases": [],
+      "is_person": true,
+      "score": 101038,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DeAndre Hopkins",
+      "aliases": [
+        "Nuk",
+        "DHop"
+      ],
+      "is_person": true,
+      "score": 100392,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Nick Chubb",
+      "aliases": [],
+      "is_person": true,
+      "score": 96840,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "George Pickens",
+      "aliases": [],
+      "is_person": true,
+      "score": 94590,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "JuJu Smith-Schuster",
+      "aliases": [],
+      "is_person": true,
+      "score": 93654,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaylen Warren",
+      "aliases": [],
+      "is_person": true,
+      "score": 92506,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kyle Juszczyk",
+      "aliases": [],
+      "is_person": true,
+      "score": 91116,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Chris Olave",
+      "aliases": [],
+      "is_person": true,
+      "score": 90497,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Chuba Hubbard",
+      "aliases": [],
+      "is_person": true,
+      "score": 90446,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Malik Nabers",
+      "aliases": [],
+      "is_person": true,
+      "score": 90060,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Isiah Pacheco",
+      "aliases": [],
+      "is_person": true,
+      "score": 89759,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DJ Moore",
+      "aliases": [],
+      "is_person": true,
+      "score": 89717,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Dontayvion Wicks",
+      "aliases": [],
+      "is_person": true,
+      "score": 89655,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Javonte Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 89328,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Zay Flowers",
+      "aliases": [],
+      "is_person": true,
+      "score": 88957,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Dalton Kincaid",
+      "aliases": [],
+      "is_person": true,
+      "score": 85741,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "David Montgomery",
+      "aliases": [],
+      "is_person": true,
+      "score": 84266,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Luther Burden III",
+      "aliases": [
+        "Luther Burden"
+      ],
+      "is_person": true,
+      "score": 83949,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Colston Loveland",
+      "aliases": [],
+      "is_person": true,
+      "score": 83768,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Keenan Allen",
+      "aliases": [],
+      "is_person": true,
+      "score": 81745,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ashton Jeanty",
+      "aliases": [],
+      "is_person": true,
+      "score": 81376,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Drake London",
+      "aliases": [],
+      "is_person": true,
+      "score": 80347,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kyren Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 78421,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jalen Coker",
+      "aliases": [],
+      "is_person": true,
+      "score": 78300,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Darnell Washington",
+      "aliases": [],
+      "is_person": true,
+      "score": 77052,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaylen Waddle",
+      "aliases": [],
+      "is_person": true,
+      "score": 76180,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Efton Chism III",
+      "aliases": [
+        "Efton Chism"
+      ],
+      "is_person": true,
+      "score": 74777,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Bucky Irving",
+      "aliases": [],
+      "is_person": true,
+      "score": 74152,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Travis Etienne",
+      "aliases": [],
+      "is_person": true,
+      "score": 73338,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kalif Raymond",
+      "aliases": [],
+      "is_person": true,
+      "score": 71917,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rome Odunze",
+      "aliases": [],
+      "is_person": true,
+      "score": 71258,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Darren Waller",
+      "aliases": [],
+      "is_person": true,
+      "score": 70739,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Garrett Wilson",
+      "aliases": [],
+      "is_person": true,
+      "score": 69530,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Devin Singletary",
+      "aliases": [],
+      "is_person": true,
+      "score": 68330,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rashee Rice",
+      "aliases": [],
+      "is_person": true,
+      "score": 68222,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Romeo Doubs",
+      "aliases": [],
+      "is_person": true,
+      "score": 67386,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Bhayshul Tuten",
+      "aliases": [],
+      "is_person": true,
+      "score": 66983,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyquan Thornton",
+      "aliases": [],
+      "is_person": true,
+      "score": 66885,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Blake Corum",
+      "aliases": [],
+      "is_person": true,
+      "score": 66612,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jameson Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 66084,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Josh Downs",
+      "aliases": [],
+      "is_person": true,
+      "score": 65858,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Christian Watson",
+      "aliases": [],
+      "is_person": true,
+      "score": 63849,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Darius Slayton",
+      "aliases": [],
+      "is_person": true,
+      "score": 63632,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tucker Kraft",
+      "aliases": [],
+      "is_person": true,
+      "score": 62576,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Emanuel Wilson",
+      "aliases": [],
+      "is_person": true,
+      "score": 61713,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kyle Monangai",
+      "aliases": [],
+      "is_person": true,
+      "score": 61154,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Terry McLaurin",
+      "aliases": [],
+      "is_person": true,
+      "score": 60960,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Marquise Brown",
+      "aliases": [],
+      "is_person": true,
+      "score": 60813,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Xavier Legette",
+      "aliases": [],
+      "is_person": true,
+      "score": 60144,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kyle Pitts",
+      "aliases": [],
+      "is_person": true,
+      "score": 59846,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kareem Hunt",
+      "aliases": [],
+      "is_person": true,
+      "score": 59131,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Cole Kmet",
+      "aliases": [],
+      "is_person": true,
+      "score": 59055,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jared Verse",
+      "aliases": [],
+      "is_person": true,
+      "score": 57629,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyler Lockett",
+      "aliases": [],
+      "is_person": true,
+      "score": 57335,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jake Browning",
+      "aliases": [],
+      "is_person": true,
+      "score": 56422,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ladd McConkey",
+      "aliases": [],
+      "is_person": true,
+      "score": 56393,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Xavier Worthy",
+      "aliases": [],
+      "is_person": true,
+      "score": 55721,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jerry Jeudy",
+      "aliases": [],
+      "is_person": true,
+      "score": 55510,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Isaac TeSlaa",
+      "aliases": [],
+      "is_person": true,
+      "score": 54673,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Sam LaPorta",
+      "aliases": [],
+      "is_person": true,
+      "score": 54330,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tez Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 54223,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Brian Thomas Jr.",
+      "aliases": [
+        "Brian Thomas",
+        "Brian Thomas Jr"
+      ],
+      "is_person": true,
+      "score": 53325,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Demarcus Robinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 52538,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tee Higgins",
+      "aliases": [],
+      "is_person": true,
+      "score": 52396,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jake Ferguson",
+      "aliases": [],
+      "is_person": true,
+      "score": 52041,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Nico Collins",
+      "aliases": [],
+      "is_person": true,
+      "score": 51383,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ollie Gordon II",
+      "aliases": [
+        "Ollie Gordon"
+      ],
+      "is_person": true,
+      "score": 51322,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Devaughn Vele",
+      "aliases": [],
+      "is_person": true,
+      "score": 51083,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Quinshon Judkins",
+      "aliases": [],
+      "is_person": true,
+      "score": 50797,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Keon Coleman",
+      "aliases": [],
+      "is_person": true,
+      "score": 49506,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Mack Hollins",
+      "aliases": [],
+      "is_person": true,
+      "score": 49501,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Zach Charbonnet",
+      "aliases": [],
+      "is_person": true,
+      "score": 49469,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyrod Taylor",
+      "aliases": [],
+      "is_person": true,
+      "score": 49082,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Emeka Egbuka",
+      "aliases": [],
+      "is_person": true,
+      "score": 48605,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Hunter Renfrow",
+      "aliases": [],
+      "is_person": true,
+      "score": 48309,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Andrei Iosivas",
+      "aliases": [],
+      "is_person": true,
+      "score": 48305,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "De'Von Achane",
+      "aliases": [],
+      "is_person": true,
+      "score": 48114,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Roman Wilson",
+      "aliases": [],
+      "is_person": true,
+      "score": 47986,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rashid Shaheed",
+      "aliases": [],
+      "is_person": true,
+      "score": 47592,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "J.K. Dobbins",
+      "aliases": [
+        "JK Dobbins"
+      ],
+      "is_person": true,
+      "score": 45863,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "George Holani",
+      "aliases": [],
+      "is_person": true,
+      "score": 45376,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Christian Kirk",
+      "aliases": [],
+      "is_person": true,
+      "score": 41688,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Dallas Goedert",
+      "aliases": [],
+      "is_person": true,
+      "score": 41582,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tony Pollard",
+      "aliases": [],
+      "is_person": true,
+      "score": 41206,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Chase Brown",
+      "aliases": [],
+      "is_person": true,
+      "score": 40487,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Terrance Ferguson",
+      "aliases": [],
+      "is_person": true,
+      "score": 40242,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyler Warren",
+      "aliases": [],
+      "is_person": true,
+      "score": 39701,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rico Dowdle",
+      "aliases": [],
+      "is_person": true,
+      "score": 39221,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Omarion Hampton",
+      "aliases": [],
+      "is_person": true,
+      "score": 38878,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ameer Abdullah",
+      "aliases": [],
+      "is_person": true,
+      "score": 38595,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rhamondre Stevenson",
+      "aliases": [],
+      "is_person": true,
+      "score": 38417,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jeffery Simmons",
+      "aliases": [],
+      "is_person": true,
+      "score": 37960,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jauan Jennings",
+      "aliases": [],
+      "is_person": true,
+      "score": 37607,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Samaje Perine",
+      "aliases": [],
+      "is_person": true,
+      "score": 37045,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Braelon Allen",
+      "aliases": [],
+      "is_person": true,
+      "score": 36767,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Pat Freiermuth",
+      "aliases": [],
+      "is_person": true,
+      "score": 36644,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "TreVeyon Henderson",
+      "aliases": [],
+      "is_person": true,
+      "score": 36566,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tre Tucker",
+      "aliases": [],
+      "is_person": true,
+      "score": 36529,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyler Higbee",
+      "aliases": [],
+      "is_person": true,
+      "score": 35666,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Alec Pierce",
+      "aliases": [],
+      "is_person": true,
+      "score": 35295,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaydon Blue",
+      "aliases": [],
+      "is_person": true,
+      "score": 35180,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Adonai Mitchell",
+      "aliases": [],
+      "is_person": true,
+      "score": 34928,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jahan Dotson",
+      "aliases": [],
+      "is_person": true,
+      "score": 34516,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Juwan Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 34380,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaleel McLaughlin",
+      "aliases": [],
+      "is_person": true,
+      "score": 34049,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Courtland Sutton",
+      "aliases": [],
+      "is_person": true,
+      "score": 33982,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Hunter Henry",
+      "aliases": [],
+      "is_person": true,
+      "score": 33754,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Devin Lloyd",
+      "aliases": [],
+      "is_person": true,
+      "score": 33209,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Austin Hooper",
+      "aliases": [],
+      "is_person": true,
+      "score": 33043,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Mark Andrews",
+      "aliases": [],
+      "is_person": true,
+      "score": 32953,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Harold Fannin Jr.",
+      "aliases": [
+        "Harold Fannin",
+        "Harold Fannin Jr"
+      ],
+      "is_person": true,
+      "score": 32615,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "T.J. Hockenson",
+      "aliases": [
+        "TJ Hockenson"
+      ],
+      "is_person": true,
+      "score": 32583,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "AJ Barner",
+      "aliases": [],
+      "is_person": true,
+      "score": 32543,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Evan Engram",
+      "aliases": [],
+      "is_person": true,
+      "score": 32522,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "James Conner",
+      "aliases": [],
+      "is_person": true,
+      "score": 32423,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Breece Hall",
+      "aliases": [],
+      "is_person": true,
+      "score": 32182,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tank Bigsby",
+      "aliases": [],
+      "is_person": true,
+      "score": 31156,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kenny Moore II",
+      "aliases": [
+        "Kenny Moore"
+      ],
+      "is_person": true,
+      "score": 31149,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kayshon Boutte",
+      "aliases": [],
+      "is_person": true,
+      "score": 30961,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Derek Stingley Jr.",
+      "aliases": [
+        "Derek Stingley",
+        "Derek Stingley Jr"
+      ],
+      "is_person": true,
+      "score": 30877,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Michael Mayer",
+      "aliases": [],
+      "is_person": true,
+      "score": 30835,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Sterling Shepard",
+      "aliases": [],
+      "is_person": true,
+      "score": 30687,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "KaVontae Turpin",
+      "aliases": [],
+      "is_person": true,
+      "score": 30044,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Mike Gesicki",
+      "aliases": [],
+      "is_person": true,
+      "score": 29841,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Treylon Burks",
+      "aliases": [],
+      "is_person": true,
+      "score": 29686,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jakobi Meyers",
+      "aliases": [],
+      "is_person": true,
+      "score": 29661,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Konata Mumpfield",
+      "aliases": [],
+      "is_person": true,
+      "score": 29564,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Marquez Valdes-Scantling",
+      "aliases": [],
+      "is_person": true,
+      "score": 29438,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jacory Croskey-Merritt",
+      "aliases": [],
+      "is_person": true,
+      "score": 28924,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Noah Fant",
+      "aliases": [],
+      "is_person": true,
+      "score": 28923,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DaRon Bland",
+      "aliases": [],
+      "is_person": true,
+      "score": 28783,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "RJ Harvey",
+      "aliases": [],
+      "is_person": true,
+      "score": 28665,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "David Njoku",
+      "aliases": [],
+      "is_person": true,
+      "score": 28160,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Riley Leonard",
+      "aliases": [],
+      "is_person": true,
+      "score": 27975,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Greg Dortch",
+      "aliases": [],
+      "is_person": true,
+      "score": 27687,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Kenny Gainwell",
+      "aliases": [],
+      "is_person": true,
+      "score": 27597,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rachaad White",
+      "aliases": [],
+      "is_person": true,
+      "score": 26983,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Malik Washington",
+      "aliases": [],
+      "is_person": true,
+      "score": 26242,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "John Metchie III",
+      "aliases": [
+        "John Metchie"
+      ],
+      "is_person": true,
+      "score": 26154,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Emari Demercado",
+      "aliases": [],
+      "is_person": true,
+      "score": 26076,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Chris Rodriguez Jr.",
+      "aliases": [
+        "Chris Rodriguez",
+        "Chris Rodriguez Jr"
+      ],
+      "is_person": true,
+      "score": 25927,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "DeMario Douglas",
+      "aliases": [],
+      "is_person": true,
+      "score": 25916,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Khalil Shakir",
+      "aliases": [],
+      "is_person": true,
+      "score": 25358,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jordan Addison",
+      "aliases": [],
+      "is_person": true,
+      "score": 25061,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jayden Reed",
+      "aliases": [],
+      "is_person": true,
+      "score": 24788,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Marshawn Kneeland",
+      "aliases": [],
+      "is_person": true,
+      "score": 24474,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jonnu Smith",
+      "aliases": [],
+      "is_person": true,
+      "score": 24389,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Ryan Flournoy",
+      "aliases": [],
+      "is_person": true,
+      "score": 24257,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyler Allgeier",
+      "aliases": [],
+      "is_person": true,
+      "score": 23635,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Audric Estim\u00e9",
+      "aliases": [],
+      "is_person": true,
+      "score": 23577,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Quentin Johnston",
+      "aliases": [],
+      "is_person": true,
+      "score": 23227,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Pat Bryant",
+      "aliases": [],
+      "is_person": true,
+      "score": 23201,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Darnell Mooney",
+      "aliases": [],
+      "is_person": true,
+      "score": 23176,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Raheim Sanders",
+      "aliases": [],
+      "is_person": true,
+      "score": 23090,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Woody Marks",
+      "aliases": [],
+      "is_person": true,
+      "score": 22701,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Allen Lazard",
+      "aliases": [],
+      "is_person": true,
+      "score": 22625,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Connor Heyward",
+      "aliases": [],
+      "is_person": true,
+      "score": 22614,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Deonte Banks",
+      "aliases": [],
+      "is_person": true,
+      "score": 21279,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Dalton Schultz",
+      "aliases": [],
+      "is_person": true,
+      "score": 21183,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaylen Wright",
+      "aliases": [],
+      "is_person": true,
+      "score": 21138,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Chris Moore",
+      "aliases": [],
+      "is_person": true,
+      "score": 21008,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jessie Bates",
+      "aliases": [],
+      "is_person": true,
+      "score": 21005,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Olamide Zaccheaus",
+      "aliases": [],
+      "is_person": true,
+      "score": 20631,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Wan'Dale Robinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 20605,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tyrone Tracy Jr.",
+      "aliases": [
+        "Tyrone Tracy",
+        "Tyrone Tracy Jr"
+      ],
+      "is_person": true,
+      "score": 20527,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tutu Atwell",
+      "aliases": [],
+      "is_person": true,
+      "score": 20474,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Tristan Wirfs",
+      "aliases": [],
+      "is_person": true,
+      "score": 20324,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Justin Reid",
+      "aliases": [],
+      "is_person": true,
+      "score": 20308,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Rashod Bateman",
+      "aliases": [],
+      "is_person": true,
+      "score": 20049,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jordan Mason",
+      "aliases": [],
+      "is_person": true,
+      "score": 19379,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Jaylin Noel",
+      "aliases": [],
+      "is_person": true,
+      "score": 19359,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Sydney Brown",
+      "aliases": [],
+      "is_person": true,
+      "score": 19328,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Isaiah Rodgers",
+      "aliases": [],
+      "is_person": true,
+      "score": 18827,
+      "quip": null,
+      "tier": "all_star",
+      "points": 60
+    },
+    {
+      "answer": "Gabe Davis",
+      "aliases": [],
+      "is_person": true,
+      "score": 18826,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tre Harris",
+      "aliases": [],
+      "is_person": true,
+      "score": 18731,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kendre Miller",
+      "aliases": [],
+      "is_person": true,
+      "score": 18603,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Chig Okonkwo",
+      "aliases": [],
+      "is_person": true,
+      "score": 18601,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ben Skowronek",
+      "aliases": [],
+      "is_person": true,
+      "score": 17878,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Antonio Gibson",
+      "aliases": [],
+      "is_person": true,
+      "score": 17778,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brevyn Spann-Ford",
+      "aliases": [],
+      "is_person": true,
+      "score": 17745,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Miles Sanders",
+      "aliases": [],
+      "is_person": true,
+      "score": 17468,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "T.J. Edwards",
+      "aliases": [
+        "TJ Edwards"
+      ],
+      "is_person": true,
+      "score": 17302,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Dee Winters",
+      "aliases": [],
+      "is_person": true,
+      "score": 17231,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Keaton Mitchell",
+      "aliases": [],
+      "is_person": true,
+      "score": 17215,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Devin Neal",
+      "aliases": [],
+      "is_person": true,
+      "score": 17130,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jalen Nailor",
+      "aliases": [],
+      "is_person": true,
+      "score": 16940,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Elijah Moore",
+      "aliases": [],
+      "is_person": true,
+      "score": 16919,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Dawson Knox",
+      "aliases": [],
+      "is_person": true,
+      "score": 16892,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mason Taylor",
+      "aliases": [],
+      "is_person": true,
+      "score": 16526,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Cobie Durant",
+      "aliases": [],
+      "is_person": true,
+      "score": 15944,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Drew Sample",
+      "aliases": [],
+      "is_person": true,
+      "score": 15791,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jahdae Walker",
+      "aliases": [],
+      "is_person": true,
+      "score": 15648,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ray Davis",
+      "aliases": [],
+      "is_person": true,
+      "score": 15570,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Marvin Mims Jr.",
+      "aliases": [
+        "Marvin Mims",
+        "Marvin Mims Jr"
+      ],
+      "is_person": true,
+      "score": 15539,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Dylan Sampson",
+      "aliases": [],
+      "is_person": true,
+      "score": 15306,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brenton Strange",
+      "aliases": [],
+      "is_person": true,
+      "score": 14308,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Davis Mills",
+      "aliases": [],
+      "is_person": true,
+      "score": 14307,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Colby Parkinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 14050,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mo Alie-Cox",
+      "aliases": [],
+      "is_person": true,
+      "score": 13845,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ryan Miller",
+      "aliases": [],
+      "is_person": true,
+      "score": 13710,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jamel Dean",
+      "aliases": [],
+      "is_person": true,
+      "score": 13447,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Xavier Hutchinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 13437,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Alohi Gilman",
+      "aliases": [],
+      "is_person": true,
+      "score": 13253,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Malik Davis",
+      "aliases": [],
+      "is_person": true,
+      "score": 13048,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Curtis Samuel",
+      "aliases": [],
+      "is_person": true,
+      "score": 12986,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Nahshon Wright",
+      "aliases": [],
+      "is_person": true,
+      "score": 12960,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Savion Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 12935,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Justice Hill",
+      "aliases": [],
+      "is_person": true,
+      "score": 12581,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Dare Ogunbowale",
+      "aliases": [],
+      "is_person": true,
+      "score": 12407,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Elic Ayomanor",
+      "aliases": [],
+      "is_person": true,
+      "score": 12117,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Lil'Jordan Humphrey",
+      "aliases": [],
+      "is_person": true,
+      "score": 12103,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Chimere Dike",
+      "aliases": [],
+      "is_person": true,
+      "score": 11905,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kimani Vidal",
+      "aliases": [],
+      "is_person": true,
+      "score": 11648,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kyle Dugger",
+      "aliases": [],
+      "is_person": true,
+      "score": 11555,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Charlie Kolar",
+      "aliases": [],
+      "is_person": true,
+      "score": 11347,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Will McDonald IV",
+      "aliases": [
+        "Will McDonald"
+      ],
+      "is_person": true,
+      "score": 11330,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tyjae Spears",
+      "aliases": [],
+      "is_person": true,
+      "score": 11314,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Bo Melton",
+      "aliases": [],
+      "is_person": true,
+      "score": 11237,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Van Jefferson",
+      "aliases": [],
+      "is_person": true,
+      "score": 11229,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Hunter Luepke",
+      "aliases": [],
+      "is_person": true,
+      "score": 11131,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Oronde Gadsden II",
+      "aliases": [
+        "Oronde Gadsden"
+      ],
+      "is_person": true,
+      "score": 10980,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tory Horton",
+      "aliases": [],
+      "is_person": true,
+      "score": 10821,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Greg Dulcich",
+      "aliases": [],
+      "is_person": true,
+      "score": 10694,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jalyx Hunt",
+      "aliases": [],
+      "is_person": true,
+      "score": 10598,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ty Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 10574,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tommy Tremble",
+      "aliases": [],
+      "is_person": true,
+      "score": 10480,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Elijah Arroyo",
+      "aliases": [],
+      "is_person": true,
+      "score": 10191,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Bam Knight",
+      "aliases": [],
+      "is_person": true,
+      "score": 10168,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Theo Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 9972,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Phil Mafah",
+      "aliases": [],
+      "is_person": true,
+      "score": 9524,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Geno Stone",
+      "aliases": [],
+      "is_person": true,
+      "score": 9455,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Zavier Scott",
+      "aliases": [],
+      "is_person": true,
+      "score": 9434,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ronnie Bell",
+      "aliases": [],
+      "is_person": true,
+      "score": 9368,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Devontez Walker",
+      "aliases": [],
+      "is_person": true,
+      "score": 9131,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jayden Higgins",
+      "aliases": [],
+      "is_person": true,
+      "score": 9127,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jake Tonges",
+      "aliases": [],
+      "is_person": true,
+      "score": 9014,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tyson Campbell",
+      "aliases": [],
+      "is_person": true,
+      "score": 8918,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Troy Franklin",
+      "aliases": [],
+      "is_person": true,
+      "score": 8797,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Gunnar Helm",
+      "aliases": [],
+      "is_person": true,
+      "score": 8716,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jalen Tolbert",
+      "aliases": [],
+      "is_person": true,
+      "score": 8456,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tim Patrick",
+      "aliases": [],
+      "is_person": true,
+      "score": 8435,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Cade Otton",
+      "aliases": [],
+      "is_person": true,
+      "score": 8336,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Dyami Brown",
+      "aliases": [],
+      "is_person": true,
+      "score": 8107,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jeremy Ruckert",
+      "aliases": [],
+      "is_person": true,
+      "score": 7974,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Christian Benford",
+      "aliases": [],
+      "is_person": true,
+      "score": 7948,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Calvin Austin III",
+      "aliases": [
+        "Calvin Austin"
+      ],
+      "is_person": true,
+      "score": 7917,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mitchell Tinsley",
+      "aliases": [],
+      "is_person": true,
+      "score": 7828,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Luke Farrell",
+      "aliases": [],
+      "is_person": true,
+      "score": 7246,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Sean Tucker",
+      "aliases": [],
+      "is_person": true,
+      "score": 7132,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "C.J. Ham",
+      "aliases": [
+        "CJ Ham"
+      ],
+      "is_person": true,
+      "score": 6839,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Gunner Olszewski",
+      "aliases": [],
+      "is_person": true,
+      "score": 6781,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Isaiah Davis",
+      "aliases": [],
+      "is_person": true,
+      "score": 6778,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Isaiah Hodgins",
+      "aliases": [],
+      "is_person": true,
+      "score": 6774,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Grant Calcaterra",
+      "aliases": [],
+      "is_person": true,
+      "score": 6760,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tyler Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 6743,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Hunter Long",
+      "aliases": [],
+      "is_person": true,
+      "score": 6560,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jaylin Lane",
+      "aliases": [],
+      "is_person": true,
+      "score": 6549,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brashard Smith",
+      "aliases": [],
+      "is_person": true,
+      "score": 6431,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jeremy McNichols",
+      "aliases": [],
+      "is_person": true,
+      "score": 6236,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tylan Wallace",
+      "aliases": [],
+      "is_person": true,
+      "score": 5851,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ja'Quan McMillian",
+      "aliases": [],
+      "is_person": true,
+      "score": 5778,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jaret Patterson",
+      "aliases": [],
+      "is_person": true,
+      "score": 5770,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Theo Wease Jr.",
+      "aliases": [
+        "Theo Wease",
+        "Theo Wease Jr"
+      ],
+      "is_person": true,
+      "score": 5549,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Nate Adkins",
+      "aliases": [],
+      "is_person": true,
+      "score": 5436,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "KeAndre Lambert-Smith",
+      "aliases": [],
+      "is_person": true,
+      "score": 5388,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brock Wright",
+      "aliases": [],
+      "is_person": true,
+      "score": 5290,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jack Stoll",
+      "aliases": [],
+      "is_person": true,
+      "score": 5174,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "David Sills",
+      "aliases": [],
+      "is_person": true,
+      "score": 5163,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jackson Hawes",
+      "aliases": [],
+      "is_person": true,
+      "score": 5105,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Josiah Deguara",
+      "aliases": [],
+      "is_person": true,
+      "score": 5041,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mitchell Evans",
+      "aliases": [],
+      "is_person": true,
+      "score": 4969,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Shedrick Jackson",
+      "aliases": [],
+      "is_person": true,
+      "score": 4950,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ja'Tavion Sanders",
+      "aliases": [],
+      "is_person": true,
+      "score": 4707,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Adam Trautman",
+      "aliases": [],
+      "is_person": true,
+      "score": 4695,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tanner Hudson",
+      "aliases": [],
+      "is_person": true,
+      "score": 4688,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Daniel Bellinger",
+      "aliases": [],
+      "is_person": true,
+      "score": 4654,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ben Sinnott",
+      "aliases": [],
+      "is_person": true,
+      "score": 4593,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Cody Barton",
+      "aliases": [],
+      "is_person": true,
+      "score": 4444,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Josh Oliver",
+      "aliases": [],
+      "is_person": true,
+      "score": 3950,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Andrew Ogletree",
+      "aliases": [],
+      "is_person": true,
+      "score": 3945,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Rasheen Ali",
+      "aliases": [],
+      "is_person": true,
+      "score": 3893,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Andrew Beck",
+      "aliases": [],
+      "is_person": true,
+      "score": 3887,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kene Nwangwu",
+      "aliases": [],
+      "is_person": true,
+      "score": 3759,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "John Bates",
+      "aliases": [],
+      "is_person": true,
+      "score": 3586,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Tyrell Shavers",
+      "aliases": [],
+      "is_person": true,
+      "score": 3561,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Terrell Jennings",
+      "aliases": [],
+      "is_person": true,
+      "score": 3318,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "John FitzPatrick",
+      "aliases": [],
+      "is_person": true,
+      "score": 3264,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Devin Culp",
+      "aliases": [],
+      "is_person": true,
+      "score": 3236,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Josh Whyle",
+      "aliases": [],
+      "is_person": true,
+      "score": 3141,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Scott Matlock",
+      "aliases": [],
+      "is_person": true,
+      "score": 3083,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kameron Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 2855,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kevin Austin Jr.",
+      "aliases": [
+        "Kevin Austin",
+        "Kevin Austin Jr"
+      ],
+      "is_person": true,
+      "score": 2762,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Anthony Nelson",
+      "aliases": [],
+      "is_person": true,
+      "score": 2491,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brittain Brown",
+      "aliases": [],
+      "is_person": true,
+      "score": 2379,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Quintin Morris",
+      "aliases": [],
+      "is_person": true,
+      "score": 1835,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Chau Smith-Wade",
+      "aliases": [],
+      "is_person": true,
+      "score": 1668,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Michael Bandy",
+      "aliases": [],
+      "is_person": true,
+      "score": 1596,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "suggested_hail_mary": true
+    },
+    {
+      "answer": "David Martin-Robinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 1273,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "suggested_hail_mary": true
+    },
+    {
+      "answer": "Davis Allen",
+      "aliases": [],
+      "is_person": true,
+      "score": 188,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "suggested_hail_mary": true
+    },
+    {
+      "answer": "Aaron Jones",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Antonio Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Brian Robinson",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Cedric Tillman",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Charlie Jones",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Chris Godwin Jr.",
+      "aliases": [
+        "Chris Godwin",
+        "Chris Godwin Jr"
+      ],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Cody White",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Deebo Samuel Sr.",
+      "aliases": [
+        "Deebo Samuel",
+        "Deebo Samuel Sr"
+      ],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Devin Bush",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Ernest Jones",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Isaiah Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Jordan Davis",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Josh Johnson",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Kyle Williams",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Marcus Jones",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Michael Carter",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Michael Pittman",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Michael Wilson",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mike Evans",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    },
+    {
+      "answer": "Mike Jackson",
+      "aliases": [],
+      "is_person": true,
+      "score": 0,
+      "quip": null,
+      "tier": "hall_of_famer",
+      "points": 85
+    }
+  ]
+}

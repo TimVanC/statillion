@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "nfl-thrown-td-pass",
+    "prompt_text": "Name an NFL player who has thrown a touchdown pass since 1999",
+    "answer_count": 449,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-800-rushing-yards",
+    "prompt_text": "Name an NFL player with an 800-yard rushing season since 1999",
+    "answer_count": 215,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-900-receiving-yards",
+    "prompt_text": "Name an NFL player with a 900-yard receiving season since 1999",
+    "answer_count": 253,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-70-receptions",
+    "prompt_text": "Name an NFL player with a 70-catch season since 1999",
+    "answer_count": 298,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-rushing-td",
+    "prompt_text": "Name an NFL player who has scored a rushing touchdown since 1999",
+    "answer_count": 1120,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-8-sacks",
+    "prompt_text": "Name an NFL player with an 8-sack season since 1999",
+    "answer_count": 317,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-5-interceptions",
+    "prompt_text": "Name an NFL player with a 5-interception season since 1999",
+    "answer_count": 246,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-kicker-100-points",
+    "prompt_text": "Name an NFL kicker with a 100-point season since 1999",
+    "answer_count": 109,
+    "flagged_under_200": true
+  },
+  {
+    "slug": "nfl-td-2025",
+    "prompt_text": "Name an NFL player who scored a touchdown in the 2025 season",
+    "answer_count": 386,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-first-round-pick",
+    "prompt_text": "Name a first-round NFL draft pick since 1980",
+    "answer_count": 1418,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-teammate-brady",
+    "prompt_text": "Name a teammate of Tom Brady",
+    "answer_count": 804,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-teammate-manning",
+    "prompt_text": "Name a teammate of Peyton Manning",
+    "answer_count": 549,
+    "flagged_under_200": false
+  },
+  {
+    "slug": "nfl-penalty",
+    "prompt_text": "Name an NFL penalty",
+    "answer_count": 50,
+    "flagged_under_200": true
+  },
+  {
+    "slug": "nfl-super-bowl-winner",
+    "prompt_text": "Name a team that has won the Super Bowl",
+    "answer_count": 20,
+    "flagged_under_200": true
+  }
+]

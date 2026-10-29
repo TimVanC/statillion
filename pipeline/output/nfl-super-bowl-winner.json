@@ -1,0 +1,264 @@
+{
+  "slug": "nfl-super-bowl-winner",
+  "sport": "NFL",
+  "prompt_text": "Name a team that has won the Super Bowl",
+  "prompt_type": "franchise",
+  "note": "Hand-written; intentionally narrow change-up",
+  "answer_count": 20,
+  "flagged_under_200": true,
+  "answers": [
+    {
+      "answer": "New England Patriots",
+      "aliases": [
+        "Patriots",
+        "Pats",
+        "New England"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Pittsburgh Steelers",
+      "aliases": [
+        "Steelers",
+        "Pittsburgh"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Kansas City Chiefs",
+      "aliases": [
+        "Chiefs",
+        "KC Chiefs",
+        "Kansas City"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "San Francisco 49ers",
+      "aliases": [
+        "49ers",
+        "Niners",
+        "San Francisco"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Dallas Cowboys",
+      "aliases": [
+        "Cowboys",
+        "Dallas"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Green Bay Packers",
+      "aliases": [
+        "Packers",
+        "Green Bay"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "New York Giants",
+      "aliases": [
+        "Giants",
+        "NY Giants"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Denver Broncos",
+      "aliases": [
+        "Broncos",
+        "Denver"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Philadelphia Eagles",
+      "aliases": [
+        "Eagles",
+        "Philly",
+        "Philadelphia"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Las Vegas Raiders",
+      "aliases": [
+        "Raiders",
+        "Oakland Raiders",
+        "LA Raiders",
+        "Los Angeles Raiders",
+        "Vegas"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Washington Commanders",
+      "aliases": [
+        "Commanders",
+        "Washington Redskins",
+        "Redskins",
+        "Washington"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Miami Dolphins",
+      "aliases": [
+        "Dolphins",
+        "Miami"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Baltimore Ravens",
+      "aliases": [
+        "Ravens",
+        "Baltimore"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Indianapolis Colts",
+      "aliases": [
+        "Colts",
+        "Baltimore Colts",
+        "Indy"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Seattle Seahawks",
+      "aliases": [
+        "Seahawks",
+        "Seattle"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Los Angeles Rams",
+      "aliases": [
+        "Rams",
+        "St. Louis Rams",
+        "LA Rams"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Tampa Bay Buccaneers",
+      "aliases": [
+        "Buccaneers",
+        "Bucs",
+        "Tampa Bay",
+        "Tampa"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "New Orleans Saints",
+      "aliases": [
+        "Saints",
+        "New Orleans"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Chicago Bears",
+      "aliases": [
+        "Bears",
+        "Chicago"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "New York Jets",
+      "aliases": [
+        "Jets",
+        "NY Jets"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": "One and done: Namath guaranteed Super Bowl III and the Jets never won another."
+    }
+  ]
+}

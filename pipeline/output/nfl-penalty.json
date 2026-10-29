@@ -1,0 +1,510 @@
+{
+  "slug": "nfl-penalty",
+  "sport": "NFL",
+  "prompt_text": "Name an NFL penalty",
+  "prompt_type": "rules",
+  "note": "Hand-written wildcard; intentionally narrow change-up",
+  "answer_count": 50,
+  "flagged_under_200": true,
+  "answers": [
+    {
+      "answer": "Holding",
+      "aliases": [
+        "Offensive holding",
+        "Defensive holding"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Pass interference",
+      "aliases": [
+        "PI",
+        "Defensive pass interference",
+        "Offensive pass interference",
+        "DPI",
+        "OPI"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "False start",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Offside",
+      "aliases": [
+        "Offsides",
+        "Defensive offside"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Facemask",
+      "aliases": [
+        "Face mask"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Roughing the passer",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Unnecessary roughness",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Unsportsmanlike conduct",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Delay of game",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "ten_day",
+      "points": 10,
+      "quip": null
+    },
+    {
+      "answer": "Encroachment",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Neutral zone infraction",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Illegal formation",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Illegal motion",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Illegal shift",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Intentional grounding",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Targeting",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Horse collar tackle",
+      "aliases": [
+        "Horse collar"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Chop block",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Clipping",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Block in the back",
+      "aliases": [
+        "Illegal block in the back"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Tripping",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Taunting",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "role_player",
+      "points": 30,
+      "quip": null
+    },
+    {
+      "answer": "Illegal contact",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Illegal use of hands",
+      "aliases": [
+        "Hands to the face"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Illegal touching",
+      "aliases": [
+        "Illegal touching of a forward pass"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Ineligible receiver downfield",
+      "aliases": [
+        "Ineligible man downfield"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Illegal forward pass",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Illegal blindside block",
+      "aliases": [
+        "Blindside block"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Roughing the kicker",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Running into the kicker",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Illegal substitution",
+      "aliases": [
+        "Too many men on the field",
+        "12 men on the field"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "all_star",
+      "points": 60,
+      "quip": null
+    },
+    {
+      "answer": "Leverage",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Leaping",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Fair catch interference",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Invalid fair catch signal",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal crackback block",
+      "aliases": [
+        "Crackback block"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal cut block",
+      "aliases": [
+        "Cut block"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal peelback block",
+      "aliases": [
+        "Peelback block"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal wedge",
+      "aliases": [
+        "Wedge block"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal batting",
+      "aliases": [
+        "Batting the ball"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal kicking",
+      "aliases": [
+        "Illegally kicking the ball"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Palpably unfair act",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hail_mary",
+      "points": 100,
+      "quip": "The rarest flag in football; the refs can award any score they see fit."
+    },
+    {
+      "answer": "Illegal touching of a kick",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Kick catch interference",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal snap",
+      "aliases": [
+        "False snap"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Disqualification",
+      "aliases": [
+        "Ejection"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Sideline infraction",
+      "aliases": [
+        "Sideline violation"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Illegal return",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Failure to report",
+      "aliases": [
+        "Failure to report as eligible"
+      ],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    },
+    {
+      "answer": "Low block",
+      "aliases": [],
+      "is_person": false,
+      "score": 0,
+      "tier": "hall_of_famer",
+      "points": 85,
+      "quip": null
+    }
+  ]
+}
