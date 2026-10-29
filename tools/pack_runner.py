@@ -161,6 +161,70 @@ ANCHOR = {"get_up", "idle_stretching"}
 SHIFT_Y = {"runner": 3}
 
 
+def polish(a):
+    """Clean the generator's edges: drop semi-transparent pixels, replace
+    the light anti-aliasing fringe with the colour just inside it, and
+    complete the dark outline wherever the silhouette has none."""
+    a = a.copy()
+    a[a[..., 3] < 128] = 0
+    a[a[..., 3] >= 128, 3] = 255
+    rgb = a[..., :3].astype(int)
+    solid = a[..., 3] > 0
+    h, w = solid.shape
+    lum = rgb.mean(2)
+    pad = np.pad(solid, 1)
+    inner = pad[:-2, 1:-1] & pad[2:, 1:-1] & pad[1:-1, :-2] & pad[1:-1, 2:]
+    for _ in range(2):
+        edge = solid & ~inner
+        for y, x in zip(*np.where(edge)):
+            nb = [(yy, xx) for yy in range(y - 1, y + 2) for xx in range(x - 1, x + 2)
+                  if 0 <= yy < h and 0 <= xx < w and solid[yy, xx] and inner[yy, xx]]
+            if not nb:
+                continue
+            nl = np.mean([lum[yy, xx] for yy, xx in nb])
+            if lum[y, x] > nl + 45:
+                yy, xx = min(nb, key=lambda p: lum[p])
+                a[y, x, :3] = a[yy, xx, :3]
+                lum[y, x] = lum[yy, xx]
+    # Outline: a transparent pixel next to a light edge pixel gets a
+    # dark version of that pixel's colour, so every set shares the same
+    # closed outline the better frames already have.
+    solid = a[..., 3] > 0
+    out = a.copy()
+    for y in range(h):
+        for x in range(w):
+            if solid[y, x]:
+                continue
+            best = None
+            for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                if 0 <= yy < h and 0 <= xx < w and solid[yy, xx] and lum[yy, xx] > 70:
+                    if best is None or lum[yy, xx] < lum[best]:
+                        best = (yy, xx)
+            if best is not None:
+                out[y, x, :3] = (a[best][:3].astype(int) * 0.3).astype(np.uint8)
+                out[y, x, 3] = 255
+    return out
+
+
+PALETTE_COLORS = 64
+
+
+def shared_palette(frames):
+    """One palette for every frame so the sets shade alike."""
+    mosaic = Image.new("RGB", (FW * len(frames), FH), (0, 0, 0))
+    for i, f in enumerate(frames):
+        mosaic.paste(Image.fromarray(f[..., :3], "RGB"), (i * FW, 0))
+    return mosaic.quantize(colors=PALETTE_COLORS, method=Image.Quantize.MEDIANCUT)
+
+
+def apply_palette(a, pal):
+    rgb = Image.fromarray(a[..., :3], "RGB").quantize(palette=pal, dither=Image.Dither.NONE).convert("RGB")
+    out = a.copy()
+    out[..., :3] = np.array(rgb)
+    out[a[..., 3] == 0] = 0
+    return out
+
+
 def load(prefix, i):
     a = np.array(Image.open(f"{SRC}/{prefix}_{i:02d}.png").convert("RGBA"))
     a = clean(a)
@@ -170,6 +234,10 @@ def load(prefix, i):
         a = anchor_feet(a)
     if prefix in SHIFT_Y:
         a = np.roll(a, SHIFT_Y[prefix], axis=0)
+    return polish(a)
+
+
+def compose(a):
     img = Image.new("RGBA", (FW, FH), (0, 0, 0, 0))
     ImageDraw.Draw(img).ellipse(
         [FW // 2 - 26, FOOT_Y - 3, FW // 2 + 24, FOOT_Y + 4], fill=(10, 8, 20, 70)
@@ -178,9 +246,11 @@ def load(prefix, i):
     return img
 
 
+raw = {name: [load(prefix, i) for i in nums] for name, (prefix, nums, *_) in ANIMS.items()}
+pal = shared_palette([f for fs in raw.values() for f in fs])
 manifest = {}
 for name, (prefix, nums, fps, loop, nxt) in ANIMS.items():
-    frames = [load(prefix, i) for i in nums]
+    frames = [compose(apply_palette(f, pal)) for f in raw[name]]
     sheet = Image.new("RGBA", (FW * len(frames), FH), (0, 0, 0, 0))
     for i, fr in enumerate(frames):
         sheet.paste(fr, (i * FW, 0))
