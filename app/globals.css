@@ -1,0 +1,45 @@
+:root {
+  --sky: #8ecae6;
+  --sky-deep: #5ba3c9;
+  --navy: #1a2744;
+  --navy-light: #2f416e;
+  --track: #b5503c;
+  --track-dark: #96402f;
+  --grass: #5a9e4b;
+  --cream: #f2ede4;
+  --accent: #e9502a;
+  --gold: #fac775;
+  --danger: #e33b3b;
+  --text: #1c1c28;
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas,
+    monospace;
+  background: var(--navy);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
