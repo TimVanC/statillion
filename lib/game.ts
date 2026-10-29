@@ -313,6 +313,15 @@ export async function completeRun(runId: string) {
   return { run, playersToday: total, percentile };
 }
 
+/**
+ * Testing aid: deletes the device's run for today (submissions cascade)
+ * so the day can be replayed from prompt 1.
+ */
+export async function resetTodayRun(deviceId: string): Promise<void> {
+  const sql = db();
+  await sql`delete from runs where device_id = ${deviceId} and date = ${todayET()}`;
+}
+
 export async function revealAnswers(runId: string) {
   const sql = db();
   const run = await loadRun(runId);

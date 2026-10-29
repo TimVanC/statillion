@@ -1,4 +1,4 @@
-.center {
+.message {
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -9,9 +9,9 @@
 }
 
 .screen {
+  position: relative;
   height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
   border: 6px solid transparent;
   transition: border-color 0.3s ease;
 }
@@ -39,11 +39,14 @@
 }
 
 .topBar {
+  position: relative;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 14px 6px;
+  background: linear-gradient(rgba(26, 39, 68, 0.75), rgba(26, 39, 68, 0));
 }
 
 .distance {
@@ -82,28 +85,113 @@
   border-radius: 6px;
 }
 
-.promptArea {
-  padding: 6px 14px;
-  min-height: 92px;
+/* The scene fills the screen behind everything else. */
+.canvasWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tapOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: rgba(26, 39, 68, 0.72);
+  color: var(--cream);
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Full-screen layer that centers its child exactly. */
+.center {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.center > * {
+  pointer-events: auto;
+}
+
+.countdownNumber {
+  font-size: 96px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+/* Only the card is in flow, so the card itself is what gets centered;
+   the clock and answer box hang off it. */
+.promptStack {
+  position: relative;
+  width: min(560px, 100%);
+}
+
+.clock {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.clockNumber {
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
+  font-variant-numeric: tabular-nums;
+}
+
+.clockDanger {
+  color: var(--danger);
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.55);
+}
+
+.timerTrack {
+  width: 100%;
+  height: 8px;
+  background: rgba(26, 39, 68, 0.45);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.timerBar {
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.2s linear;
+}
+
+.timerBarDanger {
+  background: var(--danger);
 }
 
 .promptCard {
-  flex: 1;
   background: var(--card-bg);
   color: var(--text);
-  border-radius: 12px;
+  border-radius: 14px;
   border: 3px solid var(--navy-light);
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
-  padding: 12px 14px;
-  font-size: 16px;
-  line-height: 1.45;
-  font-weight: 600;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 18px 20px;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  justify-content: center;
+  gap: 6px;
 }
 
 .promptNumber {
@@ -112,41 +200,18 @@
   color: var(--accent);
 }
 
-.canvasWrap {
-  position: relative;
-  flex: 1;
-  min-height: 180px;
-  overflow: hidden;
-}
-
-.overlayNumber {
+.answerArea {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 84px;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
-  pointer-events: none;
-}
-
-.tapOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 39, 68, 0.72);
-  color: var(--cream);
-  border: none;
-  font-size: 18px;
-  font-weight: 700;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .feedbackCard {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background: var(--card-bg);
   color: var(--text);
   border-radius: 14px;
@@ -202,44 +267,6 @@
   box-shadow: 0 3px 0 #b23616;
 }
 
-.inputArea {
-  padding: 10px 14px calc(14px + env(safe-area-inset-bottom));
-  min-height: 118px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.timerRow {
-  position: relative;
-  height: 18px;
-  background: rgba(242, 237, 228, 0.15);
-  border-radius: 9px;
-  overflow: hidden;
-}
-
-.timerBar {
-  height: 100%;
-  background: var(--gold);
-  transition: width 0.2s linear;
-}
-
-.timerBarDanger {
-  background: var(--danger);
-}
-
-.timerText {
-  position: absolute;
-  right: 8px;
-  top: 0;
-  line-height: 18px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--navy);
-  mix-blend-mode: normal;
-}
-
 .suggestion {
   background: var(--gold);
   color: var(--navy);
@@ -249,9 +276,11 @@
 }
 
 .rejectMsg {
+  background: rgba(26, 39, 68, 0.85);
   color: #ffb3a7;
+  border-radius: 8px;
+  padding: 8px 10px;
   font-size: 13px;
-  padding: 0 2px;
 }
 
 .inputRow {
@@ -302,17 +331,4 @@
 .runButton:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 #b23616;
-}
-
-/* Desktop: wider than square gets the landscape layout. */
-@media (min-aspect-ratio: 1/1) {
-  .promptArea {
-    max-width: 480px;
-  }
-
-  .inputArea {
-    max-width: 620px;
-    width: 100%;
-    margin: 0 auto;
-  }
 }

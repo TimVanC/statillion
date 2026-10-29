@@ -315,10 +315,10 @@ export default function PlayPage() {
         : "idle";
 
   if (phase === "loading") {
-    return <main className={styles.center}>Loading today&apos;s run...</main>;
+    return <main className={styles.message}>Loading today&apos;s run...</main>;
   }
   if (phase === "error") {
-    return <main className={styles.center}>{errorMsg}</main>;
+    return <main className={styles.message}>{errorMsg}</main>;
   }
 
   return (
@@ -355,35 +355,90 @@ export default function PlayPage() {
         </button>
       </header>
 
-      <section className={styles.promptArea}>
-        {prompt && phase !== "finishing" && (
-          <div className={styles.promptCard}>
-            <span className={styles.promptNumber}>
-              {position} / {PROMPTS_PER_DAY}
-            </span>
-            {prompt.text}
-          </div>
-        )}
-        {phase === "finishing" && (
-          <div className={styles.promptCard}>Finish! Crossing the line...</div>
-        )}
-      </section>
-
       <section className={styles.canvasWrap}>
         <GameCanvas
           distanceMeters={distance}
           animation={animation}
           onLandmark={() => audio.play("landmark")}
         />
+      </section>
+
+      {phase === "tap-to-start" && (
+        <button className={styles.tapOverlay} onClick={beginCountdown}>
+          Tap to begin prompt {position}
+        </button>
+      )}
+
+      {/* The question card sits at the exact center of the screen; the
+          clock hangs above it and the answer box below it. */}
+      <section className={styles.center}>
         {phase === "countdown" && (
-          <div className={styles.overlayNumber}>{countdown > 0 ? countdown : "GO"}</div>
+          <div className={styles.countdownNumber}>
+            {countdown > 0 ? countdown : "GO"}
+          </div>
         )}
-        {inFinalFive && <div className={styles.overlayNumber}>{secondsLeft}</div>}
-        {phase === "tap-to-start" && (
-          <button className={styles.tapOverlay} onClick={beginCountdown}>
-            Tap to begin prompt {position}
-          </button>
+
+        {phase === "active" && prompt && (
+          <div className={styles.promptStack}>
+            <div className={styles.clock}>
+              <div
+                className={`${styles.clockNumber} ${inFinalFive ? styles.clockDanger : ""}`}
+                aria-live="off"
+              >
+                {secondsLeft}
+              </div>
+              <div className={styles.timerTrack}>
+                <div
+                  className={`${styles.timerBar} ${inFinalFive ? styles.timerBarDanger : ""}`}
+                  style={{ width: `${(secondsLeft / PROMPT_SECONDS) * 100}%` }}
+                />
+              </div>
+            </div>
+
+            <div className={styles.promptCard}>
+              <span className={styles.promptNumber}>
+                {position} / {PROMPTS_PER_DAY}
+              </span>
+              {prompt.text}
+            </div>
+
+            <div className={styles.answerArea}>
+              <form
+                className={`${styles.inputRow} ${shake ? styles.shake : ""}`}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  onRun();
+                }}
+              >
+                <input
+                  ref={inputRef}
+                  className={styles.input}
+                  value={guess}
+                  onChange={(e) => onGuessChange(e.target.value)}
+                  placeholder="Type your answer"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  spellCheck={false}
+                  enterKeyHint="go"
+                  maxLength={80}
+                />
+                <button type="submit" className={styles.runButton}>
+                  Run
+                </button>
+              </form>
+              {suggestion && (
+                <div className={styles.suggestion}>
+                  Did you mean <strong>{suggestion}</strong>? Run again to confirm.
+                </div>
+              )}
+              {rejectMsg && !suggestion && (
+                <div className={styles.rejectMsg}>{rejectMsg}</div>
+              )}
+            </div>
+          </div>
         )}
+
         {phase === "feedback" && feedback && (
           <div className={styles.feedbackCard}>
             {feedback.kind === "scored" ? (
@@ -414,51 +469,9 @@ export default function PlayPage() {
             </button>
           </div>
         )}
-      </section>
 
-      <section className={styles.inputArea}>
-        {phase === "active" && (
-          <>
-            <div className={styles.timerRow}>
-              <div
-                className={`${styles.timerBar} ${inFinalFive ? styles.timerBarDanger : ""}`}
-                style={{ width: `${(secondsLeft / PROMPT_SECONDS) * 100}%` }}
-              />
-              <span className={styles.timerText}>{secondsLeft}s</span>
-            </div>
-            {suggestion && (
-              <div className={styles.suggestion}>
-                Did you mean <strong>{suggestion}</strong>? Run again to confirm.
-              </div>
-            )}
-            {rejectMsg && !suggestion && (
-              <div className={styles.rejectMsg}>{rejectMsg}</div>
-            )}
-            <form
-              className={`${styles.inputRow} ${shake ? styles.shake : ""}`}
-              onSubmit={(e) => {
-                e.preventDefault();
-                onRun();
-              }}
-            >
-              <input
-                ref={inputRef}
-                className={styles.input}
-                value={guess}
-                onChange={(e) => onGuessChange(e.target.value)}
-                placeholder="Type your answer"
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                spellCheck={false}
-                enterKeyHint="go"
-                maxLength={80}
-              />
-              <button type="submit" className={styles.runButton}>
-                Run
-              </button>
-            </form>
-          </>
+        {phase === "finishing" && (
+          <div className={styles.promptCard}>Finish! Crossing the line...</div>
         )}
       </section>
     </main>

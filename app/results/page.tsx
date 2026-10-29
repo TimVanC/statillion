@@ -24,6 +24,7 @@ export default function ResultsPage() {
   const [openPrompt, setOpenPrompt] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
+  const [resetting, setResetting] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -98,6 +99,24 @@ export default function ResultsPage() {
     }
   };
 
+  const resetRun = async () => {
+    setResetting(true);
+    try {
+      await fetch("/api/today/reset", {
+        method: "POST",
+        headers: { "x-device-id": getDeviceId() },
+      });
+      try {
+        window.localStorage.removeItem("statillion-last-run");
+      } catch {
+        // fine
+      }
+      router.push("/play");
+    } catch {
+      setResetting(false);
+    }
+  };
+
   return (
     <main className={styles.main}>
       <h1 className={styles.heading}>Run #{run.runNumber} complete</h1>
@@ -117,6 +136,13 @@ export default function ResultsPage() {
         <div className={styles.emojiLine}>{emojiLine}</div>
         <button className={styles.copyButton} onClick={copyResult}>
           {copied ? "Copied!" : "Copy Result"}
+        </button>
+        <button
+          className={styles.resetButton}
+          onClick={resetRun}
+          disabled={resetting}
+        >
+          {resetting ? "Resetting..." : "Reset & play again (testing)"}
         </button>
       </section>
 
