@@ -45,15 +45,15 @@ set DATABASE_URL=...
 
 ## Swapping in final runner art
 
-The runner is a swappable sprite-sheet component. Drop PNG sheets (one row per animation, transparent background, 48x48 frames) into `public/sprites/` along with `public/sprites/manifest.json`:
+The runner is a swappable sprite-sheet component. Drop PNG sheets (one row per animation, transparent background, 64x64 frames) into `public/sprites/` along with `public/sprites/manifest.json`:
 
 ```json
 {
-  "idle":      { "src": "/sprites/idle.png",      "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 5 },
-  "jog":       { "src": "/sprites/jog.png",       "frames": 6, "frameWidth": 48, "frameHeight": 48, "fps": 10 },
-  "sprint":    { "src": "/sprites/sprint.png",    "frames": 8, "frameWidth": 48, "frameHeight": 48, "fps": 14 },
-  "dip":       { "src": "/sprites/dip.png",       "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 8, "loop": false },
-  "celebrate": { "src": "/sprites/celebrate.png", "frames": 4, "frameWidth": 48, "frameHeight": 48, "fps": 6 }
+  "idle":      { "src": "/sprites/idle.png",      "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 5 },
+  "jog":       { "src": "/sprites/jog.png",       "frames": 6, "frameWidth": 64, "frameHeight": 64, "fps": 10 },
+  "sprint":    { "src": "/sprites/sprint.png",    "frames": 8, "frameWidth": 64, "frameHeight": 64, "fps": 14 },
+  "dip":       { "src": "/sprites/dip.png",       "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 8, "loop": false },
+  "celebrate": { "src": "/sprites/celebrate.png", "frames": 4, "frameWidth": 64, "frameHeight": 64, "fps": 6 }
 }
 ```
 

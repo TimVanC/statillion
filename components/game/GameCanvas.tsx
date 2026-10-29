@@ -18,7 +18,7 @@ import {
 } from "./runnerSprites";
 import { LANDMARKS } from "@/lib/scoring";
 
-const PIXEL = 3; // CSS pixels per scene pixel (nearest-neighbor)
+const PIXEL = 2; // CSS pixels per scene pixel (nearest-neighbor)
 const SPRINT_SECONDS = 1.4; // time to cover any scored gain
 
 interface Props {
@@ -142,7 +142,7 @@ export default function GameCanvas({ distanceMeters, animation, onLandmark }: Pr
           sheet.frameWidth,
           sheet.frameHeight,
           m.runnerScreenX - Math.floor(sheet.frameWidth / 2),
-          m.runnerFootY - sheet.frameHeight + 4,
+          m.runnerFootY - sheet.frameHeight + 6,
           sheet.frameWidth,
           sheet.frameHeight
         );

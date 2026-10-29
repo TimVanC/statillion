@@ -134,17 +134,17 @@ function drawFlag(
   baseY: number,
   label: string
 ) {
-  const poleH = 14;
+  const poleH = 20;
   ctx.fillStyle = "#e8e3d8";
   ctx.fillRect(x, baseY - poleH, 2, poleH);
   ctx.fillStyle = "#e9502a";
-  ctx.fillRect(x + 2, baseY - poleH, 16, 7);
+  ctx.fillRect(x + 2, baseY - poleH, 24, 10);
   ctx.fillStyle = "#b23616";
-  ctx.fillRect(x + 2, baseY - poleH + 6, 16, 1);
+  ctx.fillRect(x + 2, baseY - poleH + 9, 24, 1);
   ctx.fillStyle = "#ffffff";
-  ctx.font = "5px monospace";
+  ctx.font = "7px monospace";
   ctx.textBaseline = "top";
-  ctx.fillText(label, x + 3, baseY - poleH + 1);
+  ctx.fillText(label, x + 4, baseY - poleH + 2);
 }
 
 export function drawTrack(
@@ -222,8 +222,8 @@ export function drawLandmarkLines(
 
     // Distance stenciled on the track beside the line.
     ctx.fillStyle = "#f4f1ea";
-    ctx.font = "6px monospace";
+    ctx.font = "8px monospace";
     ctx.textBaseline = "top";
-    ctx.fillText(lm.flag, screenX + 5, m.h - 9);
+    ctx.fillText(lm.flag, screenX + 6, m.h - 11);
   }
 }
