@@ -142,7 +142,7 @@ export default function GameCanvas({ distanceMeters, animation, onLandmark }: Pr
           sheet.frameWidth,
           sheet.frameHeight,
           m.runnerScreenX - Math.floor(sheet.frameWidth / 2),
-          m.runnerFootY - sheet.frameHeight + 6,
+          m.runnerFootY - sheet.frameHeight + 10,
           sheet.frameWidth,
           sheet.frameHeight
         );

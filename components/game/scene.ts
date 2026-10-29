@@ -35,8 +35,8 @@ export function metrics(w: number, h: number): SceneMetrics {
     standsEnd,
     grassEnd,
     trackTop: grassEnd,
-    runnerScreenX: Math.round(w * 0.3),
-    runnerFootY: Math.round(h * 0.86),
+    runnerScreenX: Math.round(w * 0.22),
+    runnerFootY: Math.round(h * 0.95),
   };
 }
 
