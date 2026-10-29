@@ -45,10 +45,10 @@ set DATABASE_URL=...
 
 ## Runner art
 
-The runner is a sprite-sheet component. Frames live in `art/runner/` as 128x128 transparent PNGs (feet on row 121): `runner_01..08` (run cycle), `idle_bouncing/breathing/stretching_01..08`, `exhausted_stop_01..12`, `trip_and_fall_01..12`, `finish_line_lean_01..08`, `celebration_01..12`. Pack them into `public/sprites/` with:
+The runner is a sprite-sheet component. Frames live in `art/runner/` as 128x128 transparent PNGs (feet on row 121): `runner_01..08` (run cycle), `idle_bouncing/breathing/stretching_01..08`, `exhausted_stop_01..12`, `trip_and_fall_01..12`, `finish_line_lean_01..08`, `celebration_01..12`, `get_up_01..08`. Pack them into `public/sprites/` with:
 
 ```bash
 python tools/pack_runner.py art/runner public/sprites
 ```
 
-(needs Pillow and numpy). The manifest it writes maps game animations to sheets: `idle` (bouncing loop before the run), `rest` (hands-on-knees breathing between prompts), `jog`, `sprint`, `stop` (plays once, then `next: rest`), `fall` (plays once, holds), `dip` (finish lean, then `next: celebrate`) and `celebrate` (loop). Without a manifest the game draws a code-generated placeholder runner.
+(needs Pillow and numpy). The manifest it writes maps game animations to sheets: `idle` (bouncing loop before the run), `rest` (hands-on-knees breathing between prompts), `jog`, `sprint`, `stop` (plays once, then `next: rest`), `fall` (plays once, holds), `dip` (finish lean, then `next: celebrate`), `celebrate` (loop), `getup` (after a fall, during the next countdown, then `next: idle`) and `stretch` (start screen, then `next: idle`). Without a manifest the game draws a code-generated placeholder runner.

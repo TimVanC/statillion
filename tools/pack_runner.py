@@ -3,8 +3,8 @@
 Usage: python tools/pack_runner.py art/runner public/sprites
 
 Frames come from the generated sets in art/runner (runner_NN,
-idle_bouncing_NN, exhausted_stop_NN, trip_and_fall_NN,
-finish_line_lean_NN, celebration_NN). Thin
+idle_bouncing_NN, idle_stretching_NN, exhausted_stop_NN,
+trip_and_fall_NN, finish_line_lean_NN, celebration_NN, get_up_NN). Thin
 vertical line artifacts are dropped, dust and breath puffs are kept,
 a ground shadow is added, and one sheet per animation is written with
 manifest.json. A `next` entry chains a play-once animation into
@@ -35,6 +35,9 @@ ANIMS = {
     "fall": ("trip_and_fall", range(1, 13), 10, False, None),
     "dip": ("finish_line_lean", range(1, 9), 10, False, "celebrate"),
     "celebrate": ("celebration", [5, 6, 7, 8, 1, 2, 3, 12], 8, True, None),
+    # get_up frames 1-4 are blurry upscales; the kneel-to-stand half is clean.
+    "getup": ("get_up", range(5, 9), 6, False, "idle"),
+    "stretch": ("idle_stretching", range(1, 9), 6, False, "idle"),
 }
 
 
@@ -85,6 +88,29 @@ def clean(a):
                 if run >= 12:
                     a[y - run:y, x] = 0
                 run = 0
+    # Same for horizontal lines (runs of pixels at most 3px tall).
+    solid = a[..., 3] > 0
+    flat = np.zeros_like(solid)
+    for x in range(w):
+        y = 0
+        while y < h:
+            if not solid[y, x]:
+                y += 1
+                continue
+            y0 = y
+            while y < h and solid[y, x]:
+                y += 1
+            if y - y0 <= 3:
+                flat[y0:y, x] = True
+    for y in range(h):
+        run = 0
+        for x in range(w + 1):
+            if x < w and flat[y, x]:
+                run += 1
+            else:
+                if run >= 16:
+                    a[y, x - run:x] = 0
+                run = 0
     # Then drop any detached crumbs that are left behind.
     label, n = components(a[..., 3] > 0)
     for k in range(1, n + 1):
@@ -113,11 +139,28 @@ def shrink(a, factor):
     return canvas
 
 
+def anchor_feet(a):
+    """Shift the frame so the feet (bottom rows) are centred: some sets
+    wander sideways from frame to frame while the feet stay planted."""
+    rows = a[FOOT_Y - 12:FOOT_Y + 2, :, 3] > 0
+    xs = np.where(rows)[1]
+    if len(xs) == 0:
+        return a
+    shift = FW // 2 - (xs.min() + xs.max()) // 2
+    return np.roll(a, shift, axis=1)
+
+
+# Sets whose frames drift sideways; anchored on the feet.
+ANCHOR = {"get_up", "idle_stretching"}
+
+
 def load(prefix, i):
     a = np.array(Image.open(f"{SRC}/{prefix}_{i:02d}.png").convert("RGBA"))
     a = clean(a)
     if (prefix, i) in SCALE:
         a = shrink(a, SCALE[(prefix, i)])
+    if prefix in ANCHOR:
+        a = anchor_feet(a)
     img = Image.new("RGBA", (FW, FH), (0, 0, 0, 0))
     ImageDraw.Draw(img).ellipse(
         [FW // 2 - 26, FOOT_Y - 3, FW // 2 + 24, FOOT_Y + 4], fill=(10, 8, 20, 70)

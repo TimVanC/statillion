@@ -52,6 +52,8 @@ export default function PlayPage() {
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [shake, setShake] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [fell, setFell] = useState(false); // last prompt timed out
+  const [stretching, setStretching] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const deadlineRef = useRef(0);
@@ -121,6 +123,7 @@ export default function PlayPage() {
       setSuggestion(null);
       setRejectMsg(null);
       setPhase("active");
+      setFell(false);
       if (run) {
         void fetch("/api/submit", {
           method: "POST",
@@ -136,6 +139,21 @@ export default function PlayPage() {
 
   useEffect(() => {
     if (phase === "active") inputRef.current?.focus();
+  }, [phase]);
+
+  // On the start screen he bounces, with a stretch every few seconds.
+  useEffect(() => {
+    if (phase !== "tap-to-start") return;
+    let off = 0;
+    const id = setInterval(() => {
+      setStretching(true);
+      off = window.setTimeout(() => setStretching(false), 1500);
+    }, 6000);
+    return () => {
+      clearInterval(id);
+      clearTimeout(off);
+      setStretching(false);
+    };
   }, [phase]);
 
   const [doneAll, setDoneAll] = useState(false);
@@ -169,6 +187,7 @@ export default function PlayPage() {
       const data = (await res.json()) as SubmitResponse;
       if (data.result === "timeout") {
         setFeedback({ kind: "timeout" });
+        setFell(true);
         applyAdvance(data.nextPosition, data.totalPoints);
       }
     } finally {
@@ -242,6 +261,7 @@ export default function PlayPage() {
           setTimeout(() => setShake(false), 350);
         } else if (data.result === "timeout") {
           setFeedback({ kind: "timeout" });
+          setFell(true);
           applyAdvance(data.nextPosition, data.totalPoints);
         }
       } finally {
@@ -310,7 +330,7 @@ export default function PlayPage() {
   // He bounces on his toes while a prompt is live (the track only moves
   // when he scores, so a jog here reads as a treadmill), sprints to
   // cover a scored gain, then pulls up hands-on-knees (stop -> rest).
-  // A timeout sends him sprawling instead.
+  // A timeout sends him sprawling; he gets up during the next countdown.
   const animation: RunnerAnimation =
     phase === "finishing"
       ? "dip"
@@ -318,7 +338,11 @@ export default function PlayPage() {
         ? feedback?.kind === "timeout"
           ? "fall"
           : "stop"
-        : "idle";
+        : phase === "countdown" && fell
+          ? "getup"
+          : phase === "tap-to-start" && stretching
+            ? "stretch"
+            : "idle";
 
   if (phase === "loading") {
     return <main className={styles.message}>Loading today&apos;s run...</main>;

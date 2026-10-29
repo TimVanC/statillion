@@ -23,9 +23,11 @@ export type RunnerAnimation =
   | "stop" // pulls up after a scored answer, then rest
   | "fall" // trips after a timeout
   | "dip" // finish-line lean, then celebrate
-  | "celebrate";
+  | "celebrate"
+  | "getup" // kneel to standing after a fall, then idle
+  | "stretch"; // start-screen stretch, then idle
 export const RUNNER_ANIMATIONS: RunnerAnimation[] = [
-  "idle", "rest", "jog", "sprint", "stop", "fall", "dip", "celebrate",
+  "idle", "rest", "jog", "sprint", "stop", "fall", "dip", "celebrate", "getup", "stretch",
 ];
 
 export interface SpriteSheet {
@@ -346,6 +348,8 @@ export function generatePlaceholderSprites(): RunnerSprites {
     fall: dipSheet,
     dip: { ...dipSheet, next: "celebrate" },
     celebrate: makeSheet(celebrate, 5, true),
+    getup: { ...makeSheet(idle, 4, false), next: "idle" },
+    stretch: { ...makeSheet(celebrate, 4, false), next: "idle" },
   };
 }
 

@@ -59,5 +59,23 @@
     "frameWidth": 128,
     "frameHeight": 128,
     "fps": 8
+  },
+  "getup": {
+    "src": "/sprites/getup.png",
+    "frames": 4,
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "fps": 6,
+    "loop": false,
+    "next": "idle"
+  },
+  "stretch": {
+    "src": "/sprites/stretch.png",
+    "frames": 8,
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "fps": 6,
+    "loop": false,
+    "next": "idle"
   }
 }
