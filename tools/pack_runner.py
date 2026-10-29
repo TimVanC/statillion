@@ -26,10 +26,11 @@ FOOT_Y = 121
 # 1.4x too large; those are scaled back down to the standing size.
 SCALE = {("trip_and_fall", i): 0.72 for i in range(7, 13)}
 
-# The run cycle is the corrected alternating-leg set; the first set
-# (same leg forward in every frame) is kept as runner_v1_NN.
+# The run cycle, bouncing and breathing sets are the corrected versions;
+# the first versions are kept as *_v1_NN.
 ANIMS = {
     "idle": ("idle_bouncing", range(1, 9), 8, True, None),
+    "breathe": ("idle_breathing", range(1, 9), 6, True, None),
     "rest": ("exhausted_stop", range(9, 13), 5, True, None),
     "jog": ("runner", range(1, 9), 10, True, None),
     "sprint": ("runner", range(1, 9), 16, True, None),

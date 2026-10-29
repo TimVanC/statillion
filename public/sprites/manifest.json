@@ -6,6 +6,13 @@
     "frameHeight": 128,
     "fps": 8
   },
+  "breathe": {
+    "src": "/sprites/breathe.png",
+    "frames": 8,
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "fps": 6
+  },
   "rest": {
     "src": "/sprites/rest.png",
     "frames": 4,

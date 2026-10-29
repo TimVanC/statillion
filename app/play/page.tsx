@@ -327,10 +327,11 @@ export default function PlayPage() {
   const prompt = run?.prompts.find((p) => p.position === position);
   const inFinalFive = phase === "active" && secondsLeft <= 5 && secondsLeft > 0;
 
-  // He bounces on his toes while a prompt is live (the track only moves
-  // when he scores, so a jog here reads as a treadmill), sprints to
-  // cover a scored gain, then pulls up hands-on-knees (stop -> rest).
-  // A timeout sends him sprawling; he gets up during the next countdown.
+  // He bounces on the start screen, stands breathing while a prompt is
+  // live (the track only moves when he scores, so a jog here reads as a
+  // treadmill), sprints to cover a scored gain, then pulls up
+  // hands-on-knees (stop -> rest). A timeout sends him sprawling; he
+  // gets up during the next countdown.
   const animation: RunnerAnimation =
     phase === "finishing"
       ? "dip"
@@ -340,9 +341,11 @@ export default function PlayPage() {
           : "stop"
         : phase === "countdown" && fell
           ? "getup"
-          : phase === "tap-to-start" && stretching
-            ? "stretch"
-            : "idle";
+          : phase === "active"
+            ? "breathe"
+            : phase === "tap-to-start" && stretching
+              ? "stretch"
+              : "idle";
 
   if (phase === "loading") {
     return <main className={styles.message}>Loading today&apos;s run...</main>;

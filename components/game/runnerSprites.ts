@@ -17,6 +17,7 @@
 
 export type RunnerAnimation =
   | "idle" // bouncing on the line before the run
+  | "breathe" // standing, breathing, while a prompt is live
   | "rest" // hands on knees, breathing (between prompts)
   | "jog"
   | "sprint"
@@ -27,7 +28,7 @@ export type RunnerAnimation =
   | "getup" // kneel to standing after a fall, then idle
   | "stretch"; // start-screen stretch, then idle
 export const RUNNER_ANIMATIONS: RunnerAnimation[] = [
-  "idle", "rest", "jog", "sprint", "stop", "fall", "dip", "celebrate", "getup", "stretch",
+  "idle", "breathe", "rest", "jog", "sprint", "stop", "fall", "dip", "celebrate", "getup", "stretch",
 ];
 
 export interface SpriteSheet {
@@ -341,6 +342,7 @@ export function generatePlaceholderSprites(): RunnerSprites {
   const dipSheet = makeSheet(dip, 8, false);
   return {
     idle: idleSheet,
+    breathe: idleSheet,
     rest: idleSheet,
     jog: makeSheet(runCycle(0.75, 0.12, 33, false), 10, true),
     sprint: makeSheet(runCycle(1.0, 0.3, 32, true), 14, true),
