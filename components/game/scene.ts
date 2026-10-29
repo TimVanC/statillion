@@ -188,9 +188,10 @@ export function drawTrack(
   ctx.fillStyle = "rgba(250, 199, 117, 0.75)";
   const cy = top + Math.round(height * 0.55);
   for (let x = -chevOffset; x < m.w; x += chevSpacing) {
+    // Vertex on the right so the arrow points in the running direction.
     for (let s = 0; s < 4; s++) {
-      ctx.fillRect(x + s, cy - s, 2, 2);
-      ctx.fillRect(x + s, cy + s, 2, 2);
+      ctx.fillRect(x + s, cy - (3 - s), 2, 2);
+      ctx.fillRect(x + s, cy + (3 - s), 2, 2);
     }
   }
 }

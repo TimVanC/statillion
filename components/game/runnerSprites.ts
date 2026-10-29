@@ -177,16 +177,17 @@ function drawPose(ctx: CanvasRenderingContext2D, pose: Pose) {
     );
   }
 
-  // Round head, no face, with the darker self-color outline.
-  const headX = shoulderX + Math.sin(pose.lean) * 5;
-  const headY = shoulderY - Math.cos(pose.lean) * 5 - 2;
+  // Round head, no face, with the darker self-color outline. Head is
+  // about 1/6 of the character height and sits on the shoulders.
+  const headX = shoulderX + Math.sin(pose.lean) * 4;
+  const headY = shoulderY - Math.cos(pose.lean) * 4;
   ctx.fillStyle = BODY_OUTLINE;
   ctx.beginPath();
-  ctx.arc(Math.round(headX), Math.round(headY), 5, 0, Math.PI * 2);
+  ctx.arc(Math.round(headX), Math.round(headY), 4, 0, Math.PI * 2);
   ctx.fill();
   ctx.fillStyle = BODY;
   ctx.beginPath();
-  ctx.arc(Math.round(headX), Math.round(headY) - 1, 4, 0, Math.PI * 2);
+  ctx.arc(Math.round(headX), Math.round(headY) - 1, 3, 0, Math.PI * 2);
   ctx.fill();
 }
 
@@ -234,9 +235,9 @@ function runCycle(
       frontShin: swing + Math.max(0.2, -Math.sin(t)) * amp * 0.9,
       backThigh: -swing,
       backShin: -swing + Math.max(0.2, Math.sin(t)) * amp * 0.9,
-      frontArm: -swing * 0.8,
-      backArm: swing * 0.8,
-      armBend: -0.9,
+      frontArm: -swing * 1.4,
+      backArm: swing * 1.4,
+      armBend: -1.5,
       motionLines: motionLines && i % 2 === 0,
     });
   }
